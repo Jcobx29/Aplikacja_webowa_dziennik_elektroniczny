@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\dziennik_elektroniczny.Domain\dziennik_elektroniczny.Domain.csproj" />
+    <ProjectReference Include="..\dziennik_elektroniczny.Infrastructure\dziennik_elektroniczny.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>
