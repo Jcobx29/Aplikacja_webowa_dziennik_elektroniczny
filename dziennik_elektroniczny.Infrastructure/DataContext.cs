@@ -1,5 +1,5 @@
-﻿using dziennik_elektroniczny.Infrastructure.Model._1A;
-using dziennik_elektroniczny.Infrastructure.Model;
+﻿using dziennik_elektroniczny.Domain.Model._1A;
+using dziennik_elektroniczny.Domain.Model;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using dziennik_elektroniczny.Infrastructure.Model.TeacherInfo;
+using dziennik_elektroniczny.Domain.Model.TeacherInfo;
 
 namespace dziennik_elektroniczny.Infrastructure
 {

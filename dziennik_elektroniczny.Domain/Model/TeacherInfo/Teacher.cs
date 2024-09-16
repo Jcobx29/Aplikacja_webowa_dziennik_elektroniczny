@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace dziennik_elektroniczny.Infrastructure.Model.TeacherInfo
+namespace dziennik_elektroniczny.Domain.Model.TeacherInfo
 {
     public class Teacher
     {
