@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace dziennik_elektroniczny.Application.ViewModels.VmForDisplay
 {
-    public class Geography1AForListVm : IMapFrom<_1AStudent>
+    public class GeographyForListVm : IMapFrom<Student>
     {
         public int Id { get; set; }
         public double TestAvarage { get; set; }
@@ -18,11 +18,11 @@ namespace dziennik_elektroniczny.Application.ViewModels.VmForDisplay
 
         public void Mapping(Profile profile)
         {
-            profile.CreateMap<_1AStudent, Geography1AForListVm>()
+            profile.CreateMap<Student, GeographyForListVm>()
                 .ForMember(d => d.Id, opt => opt.MapFrom(s => s.Id))
-                .ForMember(d => d.TestAvarage, opt => opt.MapFrom(s => s._1AGeography.TestAvarage))
-                .ForMember(d => d.ShortQuizAvarage, opt => opt.MapFrom(s => s._1AGeography.ShortQuizAvarage))
-                .ForMember(d => d.HomeworkAvarage, opt => opt.MapFrom(s => s._1AGeography.HomeworkAvarage));
+                .ForMember(d => d.TestAvarage, opt => opt.MapFrom(s => s.Geography.TestAvarage))
+                .ForMember(d => d.ShortQuizAvarage, opt => opt.MapFrom(s => s.Geography.ShortQuizAvarage))
+                .ForMember(d => d.HomeworkAvarage, opt => opt.MapFrom(s => s.Geography.HomeworkAvarage));
         }
     }
 }

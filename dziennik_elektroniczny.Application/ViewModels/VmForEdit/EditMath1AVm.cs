@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace dziennik_elektroniczny.Application.ViewModels.VmForEdit
 {
-    public class EditMath1AVm : IMapFrom<_1AMath>
+    public class EditMath1AVm : IMapFrom<Domain.Model.Math>
     {
         public int Id { get; set; }
         public double TestAvarage { get; set; }
@@ -17,7 +17,7 @@ namespace dziennik_elektroniczny.Application.ViewModels.VmForEdit
         public double HomeworkAvarage { get; set; }
         public void Mapping(Profile profile)
         {
-            profile.CreateMap<EditMath1AVm, _1AMath>()
+            profile.CreateMap<EditMath1AVm, Domain.Model.Math>()
                 .ForMember(d => d.Id, opt => opt.MapFrom(s => s.Id))
                 .ForMember(d => d.TestAvarage, opt => opt.MapFrom(s => s.TestAvarage))
                 .ForMember(d => d.ShortQuizAvarage, opt => opt.MapFrom(s => s.ShortQuizAvarage))

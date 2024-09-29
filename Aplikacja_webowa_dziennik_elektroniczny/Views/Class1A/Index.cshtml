@@ -1,26 +1,12 @@
-﻿@model dziennik_elektroniczny.Application.ViewModels.VmForDisplay.ListStudentForList1AVm
+﻿@model dziennik_elektroniczny.Application.ViewModels.VmForDisplay.ListStudentForListVm
 
 @{
     ViewData["Title"] = "Index";
 }
 
 <h1>Class 1A</h1>
-<p>
-    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Class1Split">Back to previous page</a>
-</p>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                <a class="nav-link text-dark" asp-area="" asp-controller="Class1A" asp-action="StudentsAvarages">Grade averages</a>
-            </th>
-            <th>
-                <a class="nav-link text-dark" asp-area="" asp-controller="Class1A" asp-action="StudentsContactInformation">Contact information of students</a>
-            </th>
-        </tr>
-    </thead>
-</table>
+
 <form asp-action="Index" asp-controller="Class1A" method="post">
 
     <table class="table">
@@ -57,7 +43,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach (var item in Model.Students1A)
+            @foreach (var item in Model.Students)
             {
                 <tr>
                     <td>

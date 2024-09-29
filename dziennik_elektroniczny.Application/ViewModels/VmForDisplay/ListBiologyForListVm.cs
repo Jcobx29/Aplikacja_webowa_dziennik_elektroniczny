@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace dziennik_elektroniczny.Application.ViewModels.VmForDisplay
 {
-    public class ListGerman1AForListVm
+    public class ListBiologyForListVm
     {
-        public List<German1AForListVm> German1A { get; set; }
+        public List<BiologyForListVm> Biology { get; set; }
         public int CurrentPage { get; set; }
         public int PageSize { get; set; }
         public int Count { get; set; }

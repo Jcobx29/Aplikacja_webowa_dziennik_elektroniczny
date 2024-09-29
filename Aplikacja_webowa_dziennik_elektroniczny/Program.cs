@@ -1,3 +1,4 @@
+using dziennik_elektroniczny.Application;
 using dziennik_elektroniczny.Infrastructure;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -12,6 +13,9 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<DataContext>();
+
+builder.Services.AddApplication();
+builder.Services.AddInfrastructure();
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
