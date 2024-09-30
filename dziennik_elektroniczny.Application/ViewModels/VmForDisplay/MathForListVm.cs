@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using dziennik_elektroniczny.Application.Mapping;
 using dziennik_elektroniczny.Domain.Model;
+using dziennik_elektroniczny.Domain.Model._1A;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,9 +21,9 @@ namespace dziennik_elektroniczny.Application.ViewModels.VmForDisplay
         {
             profile.CreateMap<Student, MathForListVm>()
                 .ForMember(d => d.Id, opt => opt.MapFrom(s => s.Id))
-                .ForMember(d => d.TestAvarage, opt => opt.MapFrom(s => s.Math.TestAvarage))
-                .ForMember(d => d.ShortQuizAvarage, opt => opt.MapFrom(s => s.Math.ShortQuizAvarage))
-                .ForMember(d => d.HomeworkAvarage, opt => opt.MapFrom(s => s.Math.HomeworkAvarage));
+                .ForMember(d => d.TestAvarage, opt => opt.MapFrom(s => s.Maths.TestAvarage))
+                .ForMember(d => d.ShortQuizAvarage, opt => opt.MapFrom(s => s.Maths.ShortQuizAvarage))
+                .ForMember(d => d.HomeworkAvarage, opt => opt.MapFrom(s => s.Maths.HomeworkAvarage));
         }
     }
 }

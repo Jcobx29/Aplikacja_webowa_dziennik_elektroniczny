@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using dziennik_elektroniczny.Application.Mapping;
 using dziennik_elektroniczny.Domain.Model;
+using dziennik_elektroniczny.Domain.Model._1A;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace dziennik_elektroniczny.Application.ViewModels.VmForEdit
 {
-    public class EditMath1AVm : IMapFrom<Domain.Model.Math>
+    public class EditMath1AVm : IMapFrom<Maths>
     {
         public int Id { get; set; }
         public double TestAvarage { get; set; }
@@ -17,7 +18,7 @@ namespace dziennik_elektroniczny.Application.ViewModels.VmForEdit
         public double HomeworkAvarage { get; set; }
         public void Mapping(Profile profile)
         {
-            profile.CreateMap<EditMath1AVm, Domain.Model.Math>()
+            profile.CreateMap<EditMath1AVm, Maths>()
                 .ForMember(d => d.Id, opt => opt.MapFrom(s => s.Id))
                 .ForMember(d => d.TestAvarage, opt => opt.MapFrom(s => s.TestAvarage))
                 .ForMember(d => d.ShortQuizAvarage, opt => opt.MapFrom(s => s.ShortQuizAvarage))

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace dziennik_elektroniczny.Domain.Model
+namespace dziennik_elektroniczny.Domain.Model._1A
 {
     public class Student
     {
@@ -19,6 +19,6 @@ namespace dziennik_elektroniczny.Domain.Model
         public Geography Geography { get; set; }
         public German German { get; set; }
         public History History { get; set; }
-        public Math Math { get; set; }
+        public Maths Maths { get; set; }
     }
 }

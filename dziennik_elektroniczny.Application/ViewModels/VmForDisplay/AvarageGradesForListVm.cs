@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using dziennik_elektroniczny.Application.Mapping;
 using dziennik_elektroniczny.Domain.Model;
+using dziennik_elektroniczny.Domain.Model._1A;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,7 +35,7 @@ namespace dziennik_elektroniczny.Application.ViewModels.VmForDisplay
                 .ForMember(d => d.GeographyAvarage, opt => opt.MapFrom(s => (s.Geography.ShortQuizAvarage + s.Geography.HomeworkAvarage + s.Geography.TestAvarage) / 3))
                 .ForMember(d => d.GermanAvarage, opt => opt.MapFrom(s => (s.German.ShortQuizAvarage + s.German.HomeworkAvarage + s.German.TestAvarage) / 3))
                 .ForMember(d => d.HistoryAvarage, opt => opt.MapFrom(s => (s.History.ShortQuizAvarage + s.History.HomeworkAvarage + s.History.TestAvarage) / 3))
-                .ForMember(d => d.MathAvarage, opt => opt.MapFrom(s => (s.Math.ShortQuizAvarage + s.Math.HomeworkAvarage + s.Math.TestAvarage) / 3));
+                .ForMember(d => d.MathAvarage, opt => opt.MapFrom(s => (s.Maths.ShortQuizAvarage + s.Maths.HomeworkAvarage + s.Maths.TestAvarage) / 3));
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using dziennik_elektroniczny.Application.Mapping;
 using dziennik_elektroniczny.Domain.Model;
+using dziennik_elektroniczny.Domain.Model._1A;
 using System;
 using System.Collections.Generic;
 using System.Linq;

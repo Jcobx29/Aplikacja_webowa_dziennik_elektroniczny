@@ -12,8 +12,8 @@ using dziennik_elektroniczny.Infrastructure;
 namespace dziennik_elektroniczny.Infrastructure.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20240929140859_DatabaseUpdate")]
-    partial class DatabaseUpdate
+    [Migration("20240930223046_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -227,222 +227,6 @@ namespace dziennik_elektroniczny.Infrastructure.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("dziennik_elektroniczny.Domain.Model.Biology", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<double>("HomeworkAvarage")
-                        .HasColumnType("float");
-
-                    b.Property<double>("ShortQuizAvarage")
-                        .HasColumnType("float");
-
-                    b.Property<int>("StudentRef")
-                        .HasColumnType("int");
-
-                    b.Property<double>("TestAvarage")
-                        .HasColumnType("float");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("StudentRef")
-                        .IsUnique();
-
-                    b.ToTable("Biology");
-                });
-
-            modelBuilder.Entity("dziennik_elektroniczny.Domain.Model.Chemistry", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<double>("HomeworkAvarage")
-                        .HasColumnType("float");
-
-                    b.Property<double>("ShortQuizAvarage")
-                        .HasColumnType("float");
-
-                    b.Property<int>("StudentRef")
-                        .HasColumnType("int");
-
-                    b.Property<double>("TestAvarage")
-                        .HasColumnType("float");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("StudentRef")
-                        .IsUnique();
-
-                    b.ToTable("Chemistry");
-                });
-
-            modelBuilder.Entity("dziennik_elektroniczny.Domain.Model.ContactStudentInfo", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PhoneNumber")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("StudentRef")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("StudentRef")
-                        .IsUnique();
-
-                    b.ToTable("ContactStudentInfo");
-                });
-
-            modelBuilder.Entity("dziennik_elektroniczny.Domain.Model.Geography", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<double>("HomeworkAvarage")
-                        .HasColumnType("float");
-
-                    b.Property<double>("ShortQuizAvarage")
-                        .HasColumnType("float");
-
-                    b.Property<int>("StudentRef")
-                        .HasColumnType("int");
-
-                    b.Property<double>("TestAvarage")
-                        .HasColumnType("float");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("StudentRef")
-                        .IsUnique();
-
-                    b.ToTable("Geography");
-                });
-
-            modelBuilder.Entity("dziennik_elektroniczny.Domain.Model.German", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<double>("HomeworkAvarage")
-                        .HasColumnType("float");
-
-                    b.Property<double>("ShortQuizAvarage")
-                        .HasColumnType("float");
-
-                    b.Property<int>("StudentRef")
-                        .HasColumnType("int");
-
-                    b.Property<double>("TestAvarage")
-                        .HasColumnType("float");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("StudentRef")
-                        .IsUnique();
-
-                    b.ToTable("German");
-                });
-
-            modelBuilder.Entity("dziennik_elektroniczny.Domain.Model.History", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<double>("HomeworkAvarage")
-                        .HasColumnType("float");
-
-                    b.Property<double>("ShortQuizAvarage")
-                        .HasColumnType("float");
-
-                    b.Property<int>("StudentRef")
-                        .HasColumnType("int");
-
-                    b.Property<double>("TestAvarage")
-                        .HasColumnType("float");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("StudentRef")
-                        .IsUnique();
-
-                    b.ToTable("History");
-                });
-
-            modelBuilder.Entity("dziennik_elektroniczny.Domain.Model.Math", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<double>("HomeworkAvarage")
-                        .HasColumnType("float");
-
-                    b.Property<double>("ShortQuizAvarage")
-                        .HasColumnType("float");
-
-                    b.Property<int>("StudentRef")
-                        .HasColumnType("int");
-
-                    b.Property<double>("TestAvarage")
-                        .HasColumnType("float");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("StudentRef")
-                        .IsUnique();
-
-                    b.ToTable("Math");
-                });
-
-            modelBuilder.Entity("dziennik_elektroniczny.Domain.Model.Student", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("FirstName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("LastName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Student");
-                });
-
             modelBuilder.Entity("dziennik_elektroniczny.Domain.Model.TeacherInfo.Teacher", b =>
                 {
                     b.Property<int>("Id")
@@ -469,7 +253,7 @@ namespace dziennik_elektroniczny.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Teacher");
+                    b.ToTable("Teachers");
                 });
 
             modelBuilder.Entity("dziennik_elektroniczny.Domain.Model.TeacherInfo.TeacherAddress", b =>
@@ -504,7 +288,7 @@ namespace dziennik_elektroniczny.Infrastructure.Migrations
                     b.HasIndex("TeacherRef")
                         .IsUnique();
 
-                    b.ToTable("TeacherAddress");
+                    b.ToTable("TeacherAddresses");
                 });
 
             modelBuilder.Entity("dziennik_elektroniczny.Domain.Model.TeacherInfo.TeacherContactInfo", b =>
@@ -531,7 +315,90 @@ namespace dziennik_elektroniczny.Infrastructure.Migrations
                     b.HasIndex("TeacherRef")
                         .IsUnique();
 
-                    b.ToTable("TeacherContactInfo");
+                    b.ToTable("TeacherContactInfos");
+                });
+
+            modelBuilder.Entity("dziennik_elektroniczny.Domain.Model._1A.Biology", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<double>("HomeworkAvarage")
+                        .HasColumnType("float");
+
+                    b.Property<double>("ShortQuizAvarage")
+                        .HasColumnType("float");
+
+                    b.Property<int>("StudentRef")
+                        .HasColumnType("int");
+
+                    b.Property<double>("TestAvarage")
+                        .HasColumnType("float");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("StudentRef")
+                        .IsUnique();
+
+                    b.ToTable("_1ABiology");
+                });
+
+            modelBuilder.Entity("dziennik_elektroniczny.Domain.Model._1A.Chemistry", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<double>("HomeworkAvarage")
+                        .HasColumnType("float");
+
+                    b.Property<double>("ShortQuizAvarage")
+                        .HasColumnType("float");
+
+                    b.Property<int>("StudentRef")
+                        .HasColumnType("int");
+
+                    b.Property<double>("TestAvarage")
+                        .HasColumnType("float");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("StudentRef")
+                        .IsUnique();
+
+                    b.ToTable("_1AChemistry");
+                });
+
+            modelBuilder.Entity("dziennik_elektroniczny.Domain.Model._1A.ContactStudentInfo", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhoneNumber")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("StudentRef")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("StudentRef")
+                        .IsUnique();
+
+                    b.ToTable("ContactStudentInfo1A");
                 });
 
             modelBuilder.Entity("dziennik_elektroniczny.Domain.Model._1A.English", b =>
@@ -559,7 +426,140 @@ namespace dziennik_elektroniczny.Infrastructure.Migrations
                     b.HasIndex("StudentRef")
                         .IsUnique();
 
-                    b.ToTable("English");
+                    b.ToTable("_1AEnglish");
+                });
+
+            modelBuilder.Entity("dziennik_elektroniczny.Domain.Model._1A.Geography", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<double>("HomeworkAvarage")
+                        .HasColumnType("float");
+
+                    b.Property<double>("ShortQuizAvarage")
+                        .HasColumnType("float");
+
+                    b.Property<int>("StudentRef")
+                        .HasColumnType("int");
+
+                    b.Property<double>("TestAvarage")
+                        .HasColumnType("float");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("StudentRef")
+                        .IsUnique();
+
+                    b.ToTable("_1AGeography");
+                });
+
+            modelBuilder.Entity("dziennik_elektroniczny.Domain.Model._1A.German", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<double>("HomeworkAvarage")
+                        .HasColumnType("float");
+
+                    b.Property<double>("ShortQuizAvarage")
+                        .HasColumnType("float");
+
+                    b.Property<int>("StudentRef")
+                        .HasColumnType("int");
+
+                    b.Property<double>("TestAvarage")
+                        .HasColumnType("float");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("StudentRef")
+                        .IsUnique();
+
+                    b.ToTable("_1AGerman");
+                });
+
+            modelBuilder.Entity("dziennik_elektroniczny.Domain.Model._1A.History", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<double>("HomeworkAvarage")
+                        .HasColumnType("float");
+
+                    b.Property<double>("ShortQuizAvarage")
+                        .HasColumnType("float");
+
+                    b.Property<int>("StudentRef")
+                        .HasColumnType("int");
+
+                    b.Property<double>("TestAvarage")
+                        .HasColumnType("float");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("StudentRef")
+                        .IsUnique();
+
+                    b.ToTable("_1AHistory");
+                });
+
+            modelBuilder.Entity("dziennik_elektroniczny.Domain.Model._1A.Maths", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<double>("HomeworkAvarage")
+                        .HasColumnType("float");
+
+                    b.Property<double>("ShortQuizAvarage")
+                        .HasColumnType("float");
+
+                    b.Property<int>("StudentRef")
+                        .HasColumnType("int");
+
+                    b.Property<double>("TestAvarage")
+                        .HasColumnType("float");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("StudentRef")
+                        .IsUnique();
+
+                    b.ToTable("_1AMaths");
+                });
+
+            modelBuilder.Entity("dziennik_elektroniczny.Domain.Model._1A.Student", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("_1AStudents");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -613,83 +613,6 @@ namespace dziennik_elektroniczny.Infrastructure.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("dziennik_elektroniczny.Domain.Model.Biology", b =>
-                {
-                    b.HasOne("dziennik_elektroniczny.Domain.Model.Student", "Student")
-                        .WithOne("Biology")
-                        .HasForeignKey("dziennik_elektroniczny.Domain.Model.Biology", "StudentRef")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Student");
-                });
-
-            modelBuilder.Entity("dziennik_elektroniczny.Domain.Model.Chemistry", b =>
-                {
-                    b.HasOne("dziennik_elektroniczny.Domain.Model.Student", "Student")
-                        .WithOne("Chemistry")
-                        .HasForeignKey("dziennik_elektroniczny.Domain.Model.Chemistry", "StudentRef")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Student");
-                });
-
-            modelBuilder.Entity("dziennik_elektroniczny.Domain.Model.ContactStudentInfo", b =>
-                {
-                    b.HasOne("dziennik_elektroniczny.Domain.Model.Student", "Student")
-                        .WithOne("ContactStudentInfo")
-                        .HasForeignKey("dziennik_elektroniczny.Domain.Model.ContactStudentInfo", "StudentRef")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Student");
-                });
-
-            modelBuilder.Entity("dziennik_elektroniczny.Domain.Model.Geography", b =>
-                {
-                    b.HasOne("dziennik_elektroniczny.Domain.Model.Student", "Student")
-                        .WithOne("Geography")
-                        .HasForeignKey("dziennik_elektroniczny.Domain.Model.Geography", "StudentRef")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Student");
-                });
-
-            modelBuilder.Entity("dziennik_elektroniczny.Domain.Model.German", b =>
-                {
-                    b.HasOne("dziennik_elektroniczny.Domain.Model.Student", "Student")
-                        .WithOne("German")
-                        .HasForeignKey("dziennik_elektroniczny.Domain.Model.German", "StudentRef")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Student");
-                });
-
-            modelBuilder.Entity("dziennik_elektroniczny.Domain.Model.History", b =>
-                {
-                    b.HasOne("dziennik_elektroniczny.Domain.Model.Student", "Student")
-                        .WithOne("History")
-                        .HasForeignKey("dziennik_elektroniczny.Domain.Model.History", "StudentRef")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Student");
-                });
-
-            modelBuilder.Entity("dziennik_elektroniczny.Domain.Model.Math", b =>
-                {
-                    b.HasOne("dziennik_elektroniczny.Domain.Model.Student", "Student")
-                        .WithOne("Math")
-                        .HasForeignKey("dziennik_elektroniczny.Domain.Model.Math", "StudentRef")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Student");
-                });
-
             modelBuilder.Entity("dziennik_elektroniczny.Domain.Model.TeacherInfo.TeacherAddress", b =>
                 {
                     b.HasOne("dziennik_elektroniczny.Domain.Model.TeacherInfo.Teacher", "Teacher")
@@ -712,9 +635,42 @@ namespace dziennik_elektroniczny.Infrastructure.Migrations
                     b.Navigation("Teacher");
                 });
 
+            modelBuilder.Entity("dziennik_elektroniczny.Domain.Model._1A.Biology", b =>
+                {
+                    b.HasOne("dziennik_elektroniczny.Domain.Model._1A.Student", "Student")
+                        .WithOne("Biology")
+                        .HasForeignKey("dziennik_elektroniczny.Domain.Model._1A.Biology", "StudentRef")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Student");
+                });
+
+            modelBuilder.Entity("dziennik_elektroniczny.Domain.Model._1A.Chemistry", b =>
+                {
+                    b.HasOne("dziennik_elektroniczny.Domain.Model._1A.Student", "Student")
+                        .WithOne("Chemistry")
+                        .HasForeignKey("dziennik_elektroniczny.Domain.Model._1A.Chemistry", "StudentRef")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Student");
+                });
+
+            modelBuilder.Entity("dziennik_elektroniczny.Domain.Model._1A.ContactStudentInfo", b =>
+                {
+                    b.HasOne("dziennik_elektroniczny.Domain.Model._1A.Student", "Student")
+                        .WithOne("ContactStudentInfo")
+                        .HasForeignKey("dziennik_elektroniczny.Domain.Model._1A.ContactStudentInfo", "StudentRef")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Student");
+                });
+
             modelBuilder.Entity("dziennik_elektroniczny.Domain.Model._1A.English", b =>
                 {
-                    b.HasOne("dziennik_elektroniczny.Domain.Model.Student", "Student")
+                    b.HasOne("dziennik_elektroniczny.Domain.Model._1A.Student", "Student")
                         .WithOne("English")
                         .HasForeignKey("dziennik_elektroniczny.Domain.Model._1A.English", "StudentRef")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -723,7 +679,60 @@ namespace dziennik_elektroniczny.Infrastructure.Migrations
                     b.Navigation("Student");
                 });
 
-            modelBuilder.Entity("dziennik_elektroniczny.Domain.Model.Student", b =>
+            modelBuilder.Entity("dziennik_elektroniczny.Domain.Model._1A.Geography", b =>
+                {
+                    b.HasOne("dziennik_elektroniczny.Domain.Model._1A.Student", "Student")
+                        .WithOne("Geography")
+                        .HasForeignKey("dziennik_elektroniczny.Domain.Model._1A.Geography", "StudentRef")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Student");
+                });
+
+            modelBuilder.Entity("dziennik_elektroniczny.Domain.Model._1A.German", b =>
+                {
+                    b.HasOne("dziennik_elektroniczny.Domain.Model._1A.Student", "Student")
+                        .WithOne("German")
+                        .HasForeignKey("dziennik_elektroniczny.Domain.Model._1A.German", "StudentRef")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Student");
+                });
+
+            modelBuilder.Entity("dziennik_elektroniczny.Domain.Model._1A.History", b =>
+                {
+                    b.HasOne("dziennik_elektroniczny.Domain.Model._1A.Student", "Student")
+                        .WithOne("History")
+                        .HasForeignKey("dziennik_elektroniczny.Domain.Model._1A.History", "StudentRef")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Student");
+                });
+
+            modelBuilder.Entity("dziennik_elektroniczny.Domain.Model._1A.Maths", b =>
+                {
+                    b.HasOne("dziennik_elektroniczny.Domain.Model._1A.Student", "Student")
+                        .WithOne("Maths")
+                        .HasForeignKey("dziennik_elektroniczny.Domain.Model._1A.Maths", "StudentRef")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Student");
+                });
+
+            modelBuilder.Entity("dziennik_elektroniczny.Domain.Model.TeacherInfo.Teacher", b =>
+                {
+                    b.Navigation("TeacherAddress")
+                        .IsRequired();
+
+                    b.Navigation("TeacherContactInfo")
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("dziennik_elektroniczny.Domain.Model._1A.Student", b =>
                 {
                     b.Navigation("Biology")
                         .IsRequired();
@@ -746,16 +755,7 @@ namespace dziennik_elektroniczny.Infrastructure.Migrations
                     b.Navigation("History")
                         .IsRequired();
 
-                    b.Navigation("Math")
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("dziennik_elektroniczny.Domain.Model.TeacherInfo.Teacher", b =>
-                {
-                    b.Navigation("TeacherAddress")
-                        .IsRequired();
-
-                    b.Navigation("TeacherContactInfo")
+                    b.Navigation("Maths")
                         .IsRequired();
                 });
 #pragma warning restore 612, 618

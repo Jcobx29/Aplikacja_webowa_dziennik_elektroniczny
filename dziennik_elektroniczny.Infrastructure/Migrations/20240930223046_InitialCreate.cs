@@ -65,7 +65,7 @@ namespace dziennik_elektroniczny.Infrastructure.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Teacher",
+                name: "Teachers",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -77,7 +77,7 @@ namespace dziennik_elektroniczny.Infrastructure.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Teacher", x => x.Id);
+                    table.PrimaryKey("PK_Teachers", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -213,7 +213,7 @@ namespace dziennik_elektroniczny.Infrastructure.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "_1AMath",
+                name: "_1AMaths",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -225,9 +225,9 @@ namespace dziennik_elektroniczny.Infrastructure.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK__1AMath", x => x.Id);
+                    table.PrimaryKey("PK__1AMaths", x => x.Id);
                     table.ForeignKey(
-                        name: "FK__1AMath__1AStudents_StudentRef",
+                        name: "FK__1AMaths__1AStudents_StudentRef",
                         column: x => x.StudentRef,
                         principalTable: "_1AStudents",
                         principalColumn: "Id",
@@ -362,7 +362,7 @@ namespace dziennik_elektroniczny.Infrastructure.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "TeacherAddress",
+                name: "TeacherAddresses",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -375,17 +375,17 @@ namespace dziennik_elektroniczny.Infrastructure.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_TeacherAddress", x => x.Id);
+                    table.PrimaryKey("PK_TeacherAddresses", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_TeacherAddress_Teacher_TeacherRef",
+                        name: "FK_TeacherAddresses_Teachers_TeacherRef",
                         column: x => x.TeacherRef,
-                        principalTable: "Teacher",
+                        principalTable: "Teachers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "TeacherContactInfo",
+                name: "TeacherContactInfos",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -396,11 +396,11 @@ namespace dziennik_elektroniczny.Infrastructure.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_TeacherContactInfo", x => x.Id);
+                    table.PrimaryKey("PK_TeacherContactInfos", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_TeacherContactInfo_Teacher_TeacherRef",
+                        name: "FK_TeacherContactInfos_Teachers_TeacherRef",
                         column: x => x.TeacherRef,
-                        principalTable: "Teacher",
+                        principalTable: "Teachers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -442,8 +442,8 @@ namespace dziennik_elektroniczny.Infrastructure.Migrations
                 unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX__1AMath_StudentRef",
-                table: "_1AMath",
+                name: "IX__1AMaths_StudentRef",
+                table: "_1AMaths",
                 column: "StudentRef",
                 unique: true);
 
@@ -493,14 +493,14 @@ namespace dziennik_elektroniczny.Infrastructure.Migrations
                 unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_TeacherAddress_TeacherRef",
-                table: "TeacherAddress",
+                name: "IX_TeacherAddresses_TeacherRef",
+                table: "TeacherAddresses",
                 column: "TeacherRef",
                 unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_TeacherContactInfo_TeacherRef",
-                table: "TeacherContactInfo",
+                name: "IX_TeacherContactInfos_TeacherRef",
+                table: "TeacherContactInfos",
                 column: "TeacherRef",
                 unique: true);
         }
@@ -527,7 +527,7 @@ namespace dziennik_elektroniczny.Infrastructure.Migrations
                 name: "_1AHistory");
 
             migrationBuilder.DropTable(
-                name: "_1AMath");
+                name: "_1AMaths");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoleClaims");
@@ -548,10 +548,10 @@ namespace dziennik_elektroniczny.Infrastructure.Migrations
                 name: "ContactStudentInfo1A");
 
             migrationBuilder.DropTable(
-                name: "TeacherAddress");
+                name: "TeacherAddresses");
 
             migrationBuilder.DropTable(
-                name: "TeacherContactInfo");
+                name: "TeacherContactInfos");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
@@ -563,7 +563,7 @@ namespace dziennik_elektroniczny.Infrastructure.Migrations
                 name: "_1AStudents");
 
             migrationBuilder.DropTable(
-                name: "Teacher");
+                name: "Teachers");
         }
     }
 }

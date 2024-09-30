@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using dziennik_elektroniczny.Application.Mapping;
-using dziennik_elektroniczny.Domain.Model;
+using dziennik_elektroniczny.Domain.Model._1A;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,7 +28,7 @@ namespace dziennik_elektroniczny.Application.ViewModels.VmForDisplay
                 ((s.Geography.HomeworkAvarage + s.Geography.TestAvarage + s.Geography.ShortQuizAvarage) / 3) +
                 ((s.German.HomeworkAvarage + s.German.TestAvarage + s.German.ShortQuizAvarage) / 3) +
                 ((s.History.HomeworkAvarage + s.History.TestAvarage + s.History.ShortQuizAvarage) / 3) +
-                ((s.Math.HomeworkAvarage + s.Math.TestAvarage + s.Math.ShortQuizAvarage) / 3)) / 7));
+                ((s.Maths.HomeworkAvarage + s.Maths.TestAvarage + s.Maths.ShortQuizAvarage) / 3)) / 7));
         }
     }
 }

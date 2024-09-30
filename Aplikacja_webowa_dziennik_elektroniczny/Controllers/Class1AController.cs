@@ -1,5 +1,4 @@
 ﻿using dziennik_elektroniczny.Application.Interfaces;
-using dziennik_elektroniczny.Application.ViewModels.VmForEdit;
 using Microsoft.AspNetCore.Mvc;
 
 

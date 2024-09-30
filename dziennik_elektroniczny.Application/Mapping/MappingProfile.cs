@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace dziennik_elektroniczny.Application.Mapping
 {
-    public class MappingProfile : Profile
+    internal class MappingProfile : Profile
     {
         public MappingProfile()
         {

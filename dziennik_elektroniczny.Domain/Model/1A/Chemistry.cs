@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace dziennik_elektroniczny.Domain.Model
+namespace dziennik_elektroniczny.Domain.Model._1A
 {
     public class Chemistry
     {

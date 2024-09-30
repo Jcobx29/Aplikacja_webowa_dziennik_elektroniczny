@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace dziennik_elektroniczny.Application.Mapping
 {
-    internal interface IMapFrom<T>
+    public interface IMapFrom<T>
     {
         void Mapping(Profile profile) => profile.CreateMap(typeof(T), GetType());
     }
