@@ -1,5 +1,5 @@
 ﻿using dziennik_elektroniczny.Domain.Interfaces;
-using dziennik_elektroniczny.Domain.Model._1A;
+using dziennik_elektroniczny.Domain.Model.StudentInfo;
 using dziennik_elektroniczny.Domain.Model;
 using System;
 using System.Collections.Generic;
@@ -19,7 +19,7 @@ namespace dziennik_elektroniczny.Infrastructure.Repositories
 
         public IQueryable<Student> GetAll1AStudentsInfo()
         {
-            return _dataContext._1AStudents;
+            return _dataContext.Students;
         }
     }
 }

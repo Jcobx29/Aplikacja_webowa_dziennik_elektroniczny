@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace dziennik_elektroniczny.Domain.Model._1A
+namespace dziennik_elektroniczny.Domain.Model.StudentInfo
 {
-    public class Maths
+    public class English
     {
         public int Id { get; set; }
         public double TestAvarage { get; set; }

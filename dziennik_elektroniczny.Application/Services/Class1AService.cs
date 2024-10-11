@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using dziennik_elektroniczny.Application.ViewModels.VmForDisplay;
 using dziennik_elektroniczny.Application.ViewModels.VmForEdit;
-using dziennik_elektroniczny.Domain.Model._1A;
+using dziennik_elektroniczny.Domain.Model.StudentInfo;
 using dziennik_elektroniczny.Domain.Model;
 using System;
 using System.Collections.Generic;

@@ -1,4 +1,4 @@
-﻿using dziennik_elektroniczny.Domain.Model._1A;
+﻿using dziennik_elektroniczny.Domain.Model.StudentInfo;
 using dziennik_elektroniczny.Domain.Model;
 using System;
 using System.Collections.Generic;

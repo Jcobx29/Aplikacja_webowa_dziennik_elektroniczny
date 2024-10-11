@@ -1,17 +1,18 @@
-﻿using dziennik_elektroniczny.Domain.Model._1A;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace dziennik_elektroniczny.Domain.Model._1A
+namespace dziennik_elektroniczny.Domain.Model.StudentInfo
 {
     public class Student
     {
         public int Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
+        public int ClassRef { get; set; }
+        public Classes Classes {  get; set; } 
         public ContactStudentInfo ContactStudentInfo { get; set; }
         public Biology Biology { get; set; }
         public Chemistry Chemistry { get; set; }
