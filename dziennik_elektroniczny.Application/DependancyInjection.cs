@@ -14,7 +14,7 @@ namespace dziennik_elektroniczny.Application
     {
         public static IServiceCollection AddApplication(this IServiceCollection services)
         {
-            services.AddTransient<IClass1AService, Class1AService>();
+            services.AddTransient<IStudentsService, StudentsService>();
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
             return services;
         }

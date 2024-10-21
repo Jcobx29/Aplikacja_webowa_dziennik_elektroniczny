@@ -1,0 +1,149 @@
+﻿@model dziennik_elektroniczny.Application.ViewModels.VmForDisplay.ListAvarageGradesForListVm
+
+@{
+    ViewData["Title"] = "StudentsAvarages";
+}
+
+<h1>Students Avarages</h1>
+<p>
+
+    <a class="nav-link text-dark" asp-area="" asp-controller="Class1B" asp-action="Index">Back to previous page</a>
+
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <a class="nav-link text-dark" asp-area="" asp-controller="Class1B" asp-action="BiologyAvarages">Biology details</a>
+            </th>                                                               
+            <th>                                                                
+                <a class="nav-link text-dark" asp-area="" asp-controller="Class1B" asp-action="ChemistryAvarages">Chemistry details</a>
+            </th>                                                               
+            <th>                                                                
+                <a class="nav-link text-dark" asp-area="" asp-controller="Class1B" asp-action="EnglishAvarages">English details</a>
+            </th>                                                               
+            <th>                                                                
+                <a class="nav-link text-dark" asp-area="" asp-controller="Class1B" asp-action="GeographyAvarages">Geography details</a>
+            </th>                                                               
+            <th>                                                                
+                <a class="nav-link text-dark" asp-area="" asp-controller="Class1B" asp-action="GermanAvarages">German details</a>
+            </th>                                                               
+            <th>                                                                
+                <a class="nav-link text-dark" asp-area="" asp-controller="Class1B" asp-action="HistoryAvarages">History details</a>
+            </th>                                                               
+            <th>                                                                
+                <a class="nav-link text-dark" asp-area="" asp-controller="Class1B" asp-action="MathAvarages">Math details</a>
+            </th>
+        </tr>
+    </thead>
+</table>
+<form asp-action="StudentsAvarages" asp-controller="Class1B" method="post">
+    <table class="table">
+        <style>
+            table {
+                text-align: center;
+            }
+
+            th {
+                border: 1px solid;
+                padding: 10px;
+            }
+
+            td {
+                border: 1px solid;
+                padding: 10px;
+            }
+        </style>
+        <thead>
+            <tr>
+                <th>
+                    Index number
+                </th>
+                <th>
+                    BiologyAvarage
+                </th>
+                <th>
+                    ChemistryAvarage
+                </th>
+                <th>
+                    EnglishAvarage
+                </th>
+                <th>
+                    GeographyAvarage
+                </th>
+                <th>
+                    GermanAvarage
+                </th>
+                <th>
+                    HistoryAvarage
+                </th>
+                <th>
+                    MathAvarage
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.AvarageGrades)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BiologyAvarage)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ChemistryAvarage)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EnglishAvarage)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.GeographyAvarage)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.GermanAvarage)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.HistoryAvarage)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MathAvarage)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div class="row">
+        <table>
+            <tr>
+                @for (int i = 1; i < (Math.Ceiling(Model.Count / (double)Model.PageSize) + 1); i++)
+                {
+                    <td style="border: 0px; padding: 0px; width: 10px; height: 100px; font-size: 20px">
+                        @if (i != Model.CurrentPage)
+                        {
+                            <a href="javascript:PagerClick(@i)">@i</a>
+                        }
+                        else
+                        {
+                            <span>@i</span>
+                        }
+                    </td>
+                }
+            </tr>
+        </table>
+        <input type="hidden" name="pageNo" id="pageNo" />
+        <input type="hidden" name="pageSize" id="pageSize" value="10" />
+    </div>
+</form>
+
+@section Scripts
+{
+    <script type="text/javascript">
+        function PagerClick(index) {
+            document.getElementById("pageNo").value = index;
+            document.forms[0].submit();
+        }
+    </script>
+}

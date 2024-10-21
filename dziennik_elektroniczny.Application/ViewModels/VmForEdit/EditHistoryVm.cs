@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace dziennik_elektroniczny.Application.ViewModels.VmForEdit
 {
-    public class EditChemistry1AVm : IMapFrom<Chemistry>
+    public class EditHistoryVm : IMapFrom<History>
     {
         public int Id { get; set; }
         public double TestAvarage { get; set; }
@@ -18,7 +18,7 @@ namespace dziennik_elektroniczny.Application.ViewModels.VmForEdit
         public double HomeworkAvarage { get; set; }
         public void Mapping(Profile profile)
         {
-            profile.CreateMap<EditChemistry1AVm, Chemistry>()
+            profile.CreateMap<EditHistoryVm, History>()
                 .ForMember(d => d.Id, opt => opt.MapFrom(s => s.Id))
                 .ForMember(d => d.TestAvarage, opt => opt.MapFrom(s => s.TestAvarage))
                 .ForMember(d => d.ShortQuizAvarage, opt => opt.MapFrom(s => s.ShortQuizAvarage))

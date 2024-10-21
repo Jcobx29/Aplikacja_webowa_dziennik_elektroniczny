@@ -14,7 +14,6 @@ namespace dziennik_elektroniczny.Infrastructure
     public class DataContext : IdentityDbContext
     {
         public DbSet<Biology> Biology { get; set; }
-        public DbSet<Classes> Classes { get; set; }
         public DbSet<Chemistry> Chemistry { get; set; }
         public DbSet<English> English { get; set; }
         public DbSet<Geography> Geography { get; set; }
@@ -33,10 +32,7 @@ namespace dziennik_elektroniczny.Infrastructure
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
-            base.OnModelCreating(builder);
-            
-            builder.Entity<Classes>().HasOne(a => a.Student).WithOne(b => b.Classes).HasForeignKey<Student>(e => e.ClassRef);
-
+            base.OnModelCreating(builder);                        
 
             builder.Entity<Student>().HasOne(a => a.Biology).WithOne(b => b.Student).HasForeignKey<Biology>(e => e.StudentRef);
             builder.Entity<Student>().HasOne(a => a.Chemistry).WithOne(b => b.Student).HasForeignKey<Chemistry>(e => e.StudentRef);

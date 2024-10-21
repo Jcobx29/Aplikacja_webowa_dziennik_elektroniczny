@@ -1,0 +1,37 @@
+﻿@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Third Classes</h1>
+<p>
+    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="ClassSplit">Back to previous page</a>
+</p>
+<table class="table">
+    <style>
+        table {
+            text-align: center;
+        }
+
+        th {
+            border: 1px solid;
+            padding: 10px;
+        }
+    </style>
+    <thead>
+        <tr>
+            <th>
+                <a class="nav-link text-dark" asp-area="" asp-controller="Class3A" asp-action="Index">Class 3A</a>
+            </th>
+        </tr>
+        <tr>
+            <th>
+                <a class="nav-link text-dark" asp-area="" asp-controller="Class3B" asp-action="Index">Class 3B</a>
+            </th>
+        </tr>
+        <tr>
+            <th>
+                <a class="nav-link text-dark" asp-area="" asp-controller="Class3C" asp-action="Index">Class 3C</a>
+            </th>
+        </tr>
+    </thead>
+</table>

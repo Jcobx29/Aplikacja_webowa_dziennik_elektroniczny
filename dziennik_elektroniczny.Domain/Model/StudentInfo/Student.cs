@@ -11,8 +11,7 @@ namespace dziennik_elektroniczny.Domain.Model.StudentInfo
         public int Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public int ClassRef { get; set; }
-        public Classes Classes {  get; set; } 
+        public string ClassId { get; set; }
         public ContactStudentInfo ContactStudentInfo { get; set; }
         public Biology Biology { get; set; }
         public Chemistry Chemistry { get; set; }

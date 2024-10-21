@@ -1,28 +1,24 @@
-﻿@model dziennik_elektroniczny.Application.ViewModels.VmForDisplay.ListStudentForListVm
+﻿@model dziennik_elektroniczny.Application.ViewModels.VmForDisplay.ListEnglishForListVm
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "EnglishAvarages";
 }
 
-<h1>Class 1A</h1>
-<p>
-    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Class1Split">Back to previous page</a>
-</p>
+<h1>English Avarages</h1>
 
+<p>
+    <a class="nav-link text-dark" asp-area="" asp-controller="Class1B" asp-action="StudentsAvarages">Back to previous page</a>
+</p>
 <table class="table">
     <thead>
         <tr>
             <th>
-                <a class="nav-link text-dark" asp-area="" asp-controller="Class1A" asp-action="StudentsAvarages">Grade averages</a>
-            </th>
-            <th>
-                <a class="nav-link text-dark" asp-area="" asp-controller="Class1A" asp-action="StudentsContactInformation">Contact information of students</a>
+                <a class="nav-link text-dark" asp-area="" asp-controller="Class1B" asp-action="EditEnglishGrade">Edit grade</a>
             </th>
         </tr>
     </thead>
 </table>
-<form asp-action="Index" asp-controller="Class1A" method="post">
-
+<form asp-action="EnglishAvarages" asp-controller="Class1B" method="post">
     <table class="table">
         <style>
             table {
@@ -45,32 +41,32 @@
                     Index number
                 </th>
                 <th>
-                    FirstName
+                    TestAvarage
                 </th>
                 <th>
-                    LastName
+                    ShortQuizAvarage
                 </th>
                 <th>
-                    Avarage
+                    HomeWorkAvarage
                 </th>
                 <th></th>
             </tr>
         </thead>
         <tbody>
-            @foreach (var item in Model.Students)
+            @foreach (var item in Model.English)
             {
                 <tr>
                     <td>
                         @Html.DisplayFor(modelItem => item.Id)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.FirstName)
+                        @Html.DisplayFor(modelItem => item.TestAvarage)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.LastName)
+                        @Html.DisplayFor(modelItem => item.ShortQuizAvarage)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Avarage)
+                        @Html.DisplayFor(modelItem => item.HomeworkAvarage)
                     </td>
                 </tr>
             }

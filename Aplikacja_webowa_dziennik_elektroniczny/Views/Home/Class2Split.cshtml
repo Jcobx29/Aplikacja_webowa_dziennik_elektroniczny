@@ -1,0 +1,37 @@
+﻿@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Second Classes</h1>
+<p>
+    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="ClassSplit">Back to previous page</a>
+</p>
+<table class="table">
+    <style>
+        table {
+            text-align: center;
+        }
+
+        th {
+            border: 1px solid;
+            padding: 10px;
+        }
+    </style>
+    <thead>
+        <tr>
+            <th>
+                <a class="nav-link text-dark" asp-area="" asp-controller="Class2A" asp-action="Index">Class 2A</a>
+            </th>
+        </tr>
+        <tr>
+            <th>
+                <a class="nav-link text-dark" asp-area="" asp-controller="Class2B" asp-action="Index">Class 2B</a>
+            </th>
+        </tr>
+        <tr>
+            <th>
+                <a class="nav-link text-dark" asp-area="" asp-controller="Class2C" asp-action="Index">Class 2C</a>
+            </th>
+        </tr>
+    </thead>
+</table>

@@ -15,6 +15,7 @@ namespace dziennik_elektroniczny.Application.ViewModels.VmForDisplay
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public double Avarage { get; set; }
+        public string ClassId { get; set; }
 
         public void Mapping(Profile profile)
         {
@@ -28,7 +29,8 @@ namespace dziennik_elektroniczny.Application.ViewModels.VmForDisplay
                 ((s.Geography.HomeworkAvarage + s.Geography.TestAvarage + s.Geography.ShortQuizAvarage) / 3) +
                 ((s.German.HomeworkAvarage + s.German.TestAvarage + s.German.ShortQuizAvarage) / 3) +
                 ((s.History.HomeworkAvarage + s.History.TestAvarage + s.History.ShortQuizAvarage) / 3) +
-                ((s.Maths.HomeworkAvarage + s.Maths.TestAvarage + s.Maths.ShortQuizAvarage) / 3)) / 7));
+                ((s.Maths.HomeworkAvarage + s.Maths.TestAvarage + s.Maths.ShortQuizAvarage) / 3)) / 7))
+                .ForMember(d => d.ClassId, opt => opt.MapFrom(s => s.ClassId));
         }
     }
 }

@@ -2,20 +2,19 @@
 using dziennik_elektroniczny.Application.ViewModels.VmForEdit;
 using Microsoft.AspNetCore.Mvc;
 
-
-namespace OnlineGradeBookMVC.Controllers
+namespace Aplikacja_webowa_dziennik_elektroniczny.Controllers
 {
-    public class Class1AController : Controller
+    public class Class1BController : Controller
     {
         private readonly IStudentsService _class1AService;
-        public Class1AController(IStudentsService class1AService)
+        public Class1BController(IStudentsService class1AService)
         {
             _class1AService = class1AService;
-        }
+        }       
         [HttpGet]
         public IActionResult Index()
         {
-            var model = _class1AService.GetAllStudentsForList(10, 1, "1A");
+            var model = _class1AService.GetAllStudentsForList(10, 1, "1B");
             return View(model);
         }
         [HttpPost]
@@ -25,13 +24,13 @@ namespace OnlineGradeBookMVC.Controllers
             {
                 pageNo = 1;
             }
-            var model = _class1AService.GetAllStudentsForList(pageSize, pageNo.Value, "1A");
+            var model = _class1AService.GetAllStudentsForList(pageSize, pageNo.Value, "1B");
             return View(model);
         }
         [HttpGet]
         public IActionResult StudentsContactInformation()
         {
-            var model = _class1AService.GetAllStudentsContanctInfoForList(10, 1, "1A");
+            var model = _class1AService.GetAllStudentsContanctInfoForList(10, 1, "1B");
             return View(model);
         }
         [HttpPost]
@@ -41,13 +40,13 @@ namespace OnlineGradeBookMVC.Controllers
             {
                 pageNo = 1;
             }
-            var model = _class1AService.GetAllStudentsContanctInfoForList(pageSize, pageNo.Value, "1A");
+            var model = _class1AService.GetAllStudentsContanctInfoForList(pageSize, pageNo.Value, "1B");
             return View(model);
         }
         [HttpGet]
         public IActionResult StudentsAvarages()
         {
-            var model = _class1AService.GetAllAvarageGradesForList(10, 1, "1A");
+            var model = _class1AService.GetAllAvarageGradesForList(10, 1, "1B");
             return View(model);
         }
         [HttpPost]
@@ -57,13 +56,13 @@ namespace OnlineGradeBookMVC.Controllers
             {
                 pageNo = 1;
             }
-            var model = _class1AService.GetAllAvarageGradesForList(pageSize, pageNo.Value, "1A");
+            var model = _class1AService.GetAllAvarageGradesForList(pageSize, pageNo.Value, "1B");
             return View(model);
         }
         [HttpGet]
         public IActionResult BiologyAvarages()
         {
-            var model = _class1AService.GetAllBiologyForList(10, 1, "1A");
+            var model = _class1AService.GetAllBiologyForList(10, 1, "1B");
             return View(model);
         }
         [HttpPost]
@@ -73,13 +72,13 @@ namespace OnlineGradeBookMVC.Controllers
             {
                 pageNo = 1;
             }
-            var model = _class1AService.GetAllBiologyForList(pageSize, pageNo.Value, "1A");
+            var model = _class1AService.GetAllBiologyForList(pageSize, pageNo.Value, "1B");
             return View(model);
         }
         [HttpGet]
         public IActionResult ChemistryAvarages()
         {
-            var model = _class1AService.GetAllChemistryForList(10, 1, "1A");
+            var model = _class1AService.GetAllChemistryForList(10, 1, "1B");
             return View(model);
         }
         [HttpPost]
@@ -89,13 +88,13 @@ namespace OnlineGradeBookMVC.Controllers
             {
                 pageNo = 1;
             }
-            var model = _class1AService.GetAllChemistryForList(pageSize, pageNo.Value, "1A");
+            var model = _class1AService.GetAllChemistryForList(pageSize, pageNo.Value, "1B");
             return View(model);
         }
         [HttpGet]
         public IActionResult EnglishAvarages()
         {
-            var model = _class1AService.GetAllEnglishForList(10, 1, "1A");
+            var model = _class1AService.GetAllEnglishForList(10, 1, "1B");
             return View(model);
         }
         [HttpPost]
@@ -105,13 +104,13 @@ namespace OnlineGradeBookMVC.Controllers
             {
                 pageNo = 1;
             }
-            var model = _class1AService.GetAllEnglishForList(pageSize, pageNo.Value, "1A");
+            var model = _class1AService.GetAllEnglishForList(pageSize, pageNo.Value, "1B");
             return View(model);
         }
         [HttpGet]
         public IActionResult GeographyAvarages()
         {
-            var model = _class1AService.GetAllGeographyForList(10, 1, "1A");
+            var model = _class1AService.GetAllGeographyForList(10, 1, "1B");
             return View(model);
         }
         [HttpPost]
@@ -121,13 +120,13 @@ namespace OnlineGradeBookMVC.Controllers
             {
                 pageNo = 1;
             }
-            var model = _class1AService.GetAllGeographyForList(pageSize, pageNo.Value, "1A");
+            var model = _class1AService.GetAllGeographyForList(pageSize, pageNo.Value, "1B");
             return View(model);
         }
         [HttpGet]
         public IActionResult GermanAvarages()
         {
-            var model = _class1AService.GetAllGermanForList(10, 1, "1A");
+            var model = _class1AService.GetAllGermanForList(10, 1, "1B");
             return View(model);
         }
         [HttpPost]
@@ -137,13 +136,13 @@ namespace OnlineGradeBookMVC.Controllers
             {
                 pageNo = 1;
             }
-            var model = _class1AService.GetAllGermanForList(pageSize, pageNo.Value, "1A");
+            var model = _class1AService.GetAllGermanForList(pageSize, pageNo.Value, "1B");
             return View(model);
         }
         [HttpGet]
         public IActionResult HistoryAvarages()
         {
-            var model = _class1AService.GetAllHistoryForList(10, 1, "1A");
+            var model = _class1AService.GetAllHistoryForList(10, 1, "1B");
             return View(model);
         }
         [HttpPost]
@@ -153,13 +152,13 @@ namespace OnlineGradeBookMVC.Controllers
             {
                 pageNo = 1;
             }
-            var model = _class1AService.GetAllHistoryForList(pageSize, pageNo.Value, "1A");
+            var model = _class1AService.GetAllHistoryForList(pageSize, pageNo.Value, "1B");
             return View(model);
         }
         [HttpGet]
         public IActionResult MathAvarages()
         {
-            var model = _class1AService.GetAllMathForList(10, 1, "1A");
+            var model = _class1AService.GetAllMathForList(10, 1, "1B");
             return View(model);
         }
         [HttpPost]
@@ -169,7 +168,7 @@ namespace OnlineGradeBookMVC.Controllers
             {
                 pageNo = 1;
             }
-            var model = _class1AService.GetAllMathForList(pageSize, pageNo.Value, "1A");
+            var model = _class1AService.GetAllMathForList(pageSize, pageNo.Value, "1B");
             return View(model);
         }
 
