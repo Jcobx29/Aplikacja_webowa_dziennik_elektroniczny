@@ -5,55 +5,57 @@
 }
 
 <h1>Students Avarages</h1>
-<p>
+<div class="flex">
+    <div>
+        <a class="nav-link text-dark" asp-area="" asp-controller="Class1B" asp-action="Index">Back to previous page</a>
+    </div>
+    <div class="next">
+        <a class="nav-link text-dark" asp-area="" asp-controller="Class1B" asp-action="BiologyAvarages">Biology details</a>
+    </div>
+    <div class="next">
+        <a class="nav-link text-dark" asp-area="" asp-controller="Class1B" asp-action="ChemistryAvarages">Chemistry details</a>
+    </div>
+    <div class="next">
+        <a class="nav-link text-dark" asp-area="" asp-controller="Class1B" asp-action="EnglishAvarages">English details</a>
+    </div>
+    <div class="next">
+        <a class="nav-link text-dark" asp-area="" asp-controller="Class1B" asp-action="GeographyAvarages">Geography details</a>
+    </div>
+    <div class="next">
+        <a class="nav-link text-dark" asp-area="" asp-controller="Class1B" asp-action="GermanAvarages">German details</a>
+    </div>
+    <div class="next">
+        <a class="nav-link text-dark" asp-area="" asp-controller="Class1B" asp-action="HistoryAvarages">History details</a>
+    </div>
+    <div class="next">
+        <a class="nav-link text-dark" asp-area="" asp-controller="Class1B" asp-action="MathAvarages">Math details</a>
+    </div>
+</div>
+<style>
+    table {
+        text-align: center;
+    }
 
-    <a class="nav-link text-dark" asp-area="" asp-controller="Class1B" asp-action="Index">Back to previous page</a>
+    .flex {
+        display: flex;
+    }
 
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                <a class="nav-link text-dark" asp-area="" asp-controller="Class1B" asp-action="BiologyAvarages">Biology details</a>
-            </th>                                                               
-            <th>                                                                
-                <a class="nav-link text-dark" asp-area="" asp-controller="Class1B" asp-action="ChemistryAvarages">Chemistry details</a>
-            </th>                                                               
-            <th>                                                                
-                <a class="nav-link text-dark" asp-area="" asp-controller="Class1B" asp-action="EnglishAvarages">English details</a>
-            </th>                                                               
-            <th>                                                                
-                <a class="nav-link text-dark" asp-area="" asp-controller="Class1B" asp-action="GeographyAvarages">Geography details</a>
-            </th>                                                               
-            <th>                                                                
-                <a class="nav-link text-dark" asp-area="" asp-controller="Class1B" asp-action="GermanAvarages">German details</a>
-            </th>                                                               
-            <th>                                                                
-                <a class="nav-link text-dark" asp-area="" asp-controller="Class1B" asp-action="HistoryAvarages">History details</a>
-            </th>                                                               
-            <th>                                                                
-                <a class="nav-link text-dark" asp-area="" asp-controller="Class1B" asp-action="MathAvarages">Math details</a>
-            </th>
-        </tr>
-    </thead>
-</table>
+    .next {
+        font-weight: bold;
+    }
+
+    th {
+        border: 1px solid;
+        padding: 10px;
+    }
+
+    td {
+        border: 1px solid;
+        padding: 10px;
+    }
+</style>
 <form asp-action="StudentsAvarages" asp-controller="Class1B" method="post">
     <table class="table">
-        <style>
-            table {
-                text-align: center;
-            }
-
-            th {
-                border: 1px solid;
-                padding: 10px;
-            }
-
-            td {
-                border: 1px solid;
-                padding: 10px;
-            }
-        </style>
         <thead>
             <tr>
                 <th>
@@ -80,7 +82,6 @@
                 <th>
                     MathAvarage
                 </th>
-                <th></th>
             </tr>
         </thead>
         <tbody>

@@ -5,40 +5,42 @@
 }
 
 <h1>Class 1A</h1>
-<p>
-    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Class1Split">Back to previous page</a>
-</p>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                <a class="nav-link text-dark" asp-area="" asp-controller="Class1A" asp-action="StudentsAvarages">Grade averages</a>
-            </th>
-            <th>
-                <a class="nav-link text-dark" asp-area="" asp-controller="Class1A" asp-action="StudentsContactInformation">Contact information of students</a>
-            </th>
-        </tr>
-    </thead>
-</table>
+<div class="flex">
+    <div>
+        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Class1Split">Back to previous page</a>
+    </div>
+    <div class="next">
+        <a class="nav-link text-dark" asp-area="" asp-controller="Class1A" asp-action="StudentsAvarages">Grade averages</a>
+    </div>
+    <div class ="next">
+        <a class="nav-link text-dark" asp-area="" asp-controller="Class1A" asp-action="StudentsContactInformation">Contact information of students</a>
+    </div>            
+</div>
+<style>
+    table {
+        text-align: center;
+    }
+    .flex{
+        display: flex;
+    }
+    .next{
+        font-weight: bold;
+    }
+    th {
+        border: 1px solid;
+        padding: 10px;
+    }
+
+    td {
+        border: 1px solid;
+        padding: 10px;
+    }
+</style>
 <form asp-action="Index" asp-controller="Class1A" method="post">
 
     <table class="table">
-        <style>
-            table {
-                text-align: center;
-            }
 
-            th {
-                border: 1px solid;
-                padding: 10px;
-            }
-
-            td {
-                border: 1px solid;
-                padding: 10px;
-            }
-        </style>
         <thead>
             <tr>
                 <th>
@@ -53,7 +55,6 @@
                 <th>
                     Avarage
                 </th>
-                <th></th>
             </tr>
         </thead>
         <tbody>

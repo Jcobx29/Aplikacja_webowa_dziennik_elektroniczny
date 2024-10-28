@@ -6,15 +6,15 @@ namespace Aplikacja_webowa_dziennik_elektroniczny.Controllers
 {
     public class Class1BController : Controller
     {
-        private readonly IStudentsService _class1AService;
-        public Class1BController(IStudentsService class1AService)
+        private readonly IStudentsService _studentsService;
+        public Class1BController(IStudentsService studentsService)
         {
-            _class1AService = class1AService;
+            _studentsService = studentsService;
         }       
         [HttpGet]
         public IActionResult Index()
         {
-            var model = _class1AService.GetAllStudentsForList(10, 1, "1B");
+            var model = _studentsService.GetAllStudentsForList(10, 1, "1B");
             return View(model);
         }
         [HttpPost]
@@ -24,13 +24,13 @@ namespace Aplikacja_webowa_dziennik_elektroniczny.Controllers
             {
                 pageNo = 1;
             }
-            var model = _class1AService.GetAllStudentsForList(pageSize, pageNo.Value, "1B");
+            var model = _studentsService.GetAllStudentsForList(pageSize, pageNo.Value, "1B");
             return View(model);
         }
         [HttpGet]
         public IActionResult StudentsContactInformation()
         {
-            var model = _class1AService.GetAllStudentsContanctInfoForList(10, 1, "1B");
+            var model = _studentsService.GetAllStudentsContanctInfoForList(10, 1, "1B");
             return View(model);
         }
         [HttpPost]
@@ -40,13 +40,13 @@ namespace Aplikacja_webowa_dziennik_elektroniczny.Controllers
             {
                 pageNo = 1;
             }
-            var model = _class1AService.GetAllStudentsContanctInfoForList(pageSize, pageNo.Value, "1B");
+            var model = _studentsService.GetAllStudentsContanctInfoForList(pageSize, pageNo.Value, "1B");
             return View(model);
         }
         [HttpGet]
         public IActionResult StudentsAvarages()
         {
-            var model = _class1AService.GetAllAvarageGradesForList(10, 1, "1B");
+            var model = _studentsService.GetAllAvarageGradesForList(10, 1, "1B");
             return View(model);
         }
         [HttpPost]
@@ -56,13 +56,13 @@ namespace Aplikacja_webowa_dziennik_elektroniczny.Controllers
             {
                 pageNo = 1;
             }
-            var model = _class1AService.GetAllAvarageGradesForList(pageSize, pageNo.Value, "1B");
+            var model = _studentsService.GetAllAvarageGradesForList(pageSize, pageNo.Value, "1B");
             return View(model);
         }
         [HttpGet]
         public IActionResult BiologyAvarages()
         {
-            var model = _class1AService.GetAllBiologyForList(10, 1, "1B");
+            var model = _studentsService.GetAllBiologyForList(10, 1, "1B");
             return View(model);
         }
         [HttpPost]
@@ -72,13 +72,13 @@ namespace Aplikacja_webowa_dziennik_elektroniczny.Controllers
             {
                 pageNo = 1;
             }
-            var model = _class1AService.GetAllBiologyForList(pageSize, pageNo.Value, "1B");
+            var model = _studentsService.GetAllBiologyForList(pageSize, pageNo.Value, "1B");
             return View(model);
         }
         [HttpGet]
         public IActionResult ChemistryAvarages()
         {
-            var model = _class1AService.GetAllChemistryForList(10, 1, "1B");
+            var model = _studentsService.GetAllChemistryForList(10, 1, "1B");
             return View(model);
         }
         [HttpPost]
@@ -88,13 +88,13 @@ namespace Aplikacja_webowa_dziennik_elektroniczny.Controllers
             {
                 pageNo = 1;
             }
-            var model = _class1AService.GetAllChemistryForList(pageSize, pageNo.Value, "1B");
+            var model = _studentsService.GetAllChemistryForList(pageSize, pageNo.Value, "1B");
             return View(model);
         }
         [HttpGet]
         public IActionResult EnglishAvarages()
         {
-            var model = _class1AService.GetAllEnglishForList(10, 1, "1B");
+            var model = _studentsService.GetAllEnglishForList(10, 1, "1B");
             return View(model);
         }
         [HttpPost]
@@ -104,13 +104,13 @@ namespace Aplikacja_webowa_dziennik_elektroniczny.Controllers
             {
                 pageNo = 1;
             }
-            var model = _class1AService.GetAllEnglishForList(pageSize, pageNo.Value, "1B");
+            var model = _studentsService.GetAllEnglishForList(pageSize, pageNo.Value, "1B");
             return View(model);
         }
         [HttpGet]
         public IActionResult GeographyAvarages()
         {
-            var model = _class1AService.GetAllGeographyForList(10, 1, "1B");
+            var model = _studentsService.GetAllGeographyForList(10, 1, "1B");
             return View(model);
         }
         [HttpPost]
@@ -120,13 +120,13 @@ namespace Aplikacja_webowa_dziennik_elektroniczny.Controllers
             {
                 pageNo = 1;
             }
-            var model = _class1AService.GetAllGeographyForList(pageSize, pageNo.Value, "1B");
+            var model = _studentsService.GetAllGeographyForList(pageSize, pageNo.Value, "1B");
             return View(model);
         }
         [HttpGet]
         public IActionResult GermanAvarages()
         {
-            var model = _class1AService.GetAllGermanForList(10, 1, "1B");
+            var model = _studentsService.GetAllGermanForList(10, 1, "1B");
             return View(model);
         }
         [HttpPost]
@@ -136,13 +136,13 @@ namespace Aplikacja_webowa_dziennik_elektroniczny.Controllers
             {
                 pageNo = 1;
             }
-            var model = _class1AService.GetAllGermanForList(pageSize, pageNo.Value, "1B");
+            var model = _studentsService.GetAllGermanForList(pageSize, pageNo.Value, "1B");
             return View(model);
         }
         [HttpGet]
         public IActionResult HistoryAvarages()
         {
-            var model = _class1AService.GetAllHistoryForList(10, 1, "1B");
+            var model = _studentsService.GetAllHistoryForList(10, 1, "1B");
             return View(model);
         }
         [HttpPost]
@@ -152,13 +152,13 @@ namespace Aplikacja_webowa_dziennik_elektroniczny.Controllers
             {
                 pageNo = 1;
             }
-            var model = _class1AService.GetAllHistoryForList(pageSize, pageNo.Value, "1B");
+            var model = _studentsService.GetAllHistoryForList(pageSize, pageNo.Value, "1B");
             return View(model);
         }
         [HttpGet]
         public IActionResult MathAvarages()
         {
-            var model = _class1AService.GetAllMathForList(10, 1, "1B");
+            var model = _studentsService.GetAllMathForList(10, 1, "1B");
             return View(model);
         }
         [HttpPost]
@@ -168,14 +168,14 @@ namespace Aplikacja_webowa_dziennik_elektroniczny.Controllers
             {
                 pageNo = 1;
             }
-            var model = _class1AService.GetAllMathForList(pageSize, pageNo.Value, "1B");
+            var model = _studentsService.GetAllMathForList(pageSize, pageNo.Value, "1B");
             return View(model);
         }
 
         [HttpGet]
         public IActionResult EditBiologyGrade(int id)
         {
-            var biologyGrade = _class1AService.GetBiologyGradeForEdit(id);
+            var biologyGrade = _studentsService.GetBiologyGradeForEdit(id);
             return View(biologyGrade);
         }
         [HttpPost]
@@ -183,7 +183,7 @@ namespace Aplikacja_webowa_dziennik_elektroniczny.Controllers
         {
             if (ModelState.IsValid)
             {
-                _class1AService.UpdateBiologyGrade(model);
+                _studentsService.UpdateBiologyGrade(model);
                 return RedirectToAction("BiologyAvarages");
             }
             return View(model);
@@ -192,7 +192,7 @@ namespace Aplikacja_webowa_dziennik_elektroniczny.Controllers
         [HttpGet]
         public IActionResult EditChemistryGrade(int id)
         {
-            var chemistryGrade = _class1AService.GetChemistryGradeForEdit(id);
+            var chemistryGrade = _studentsService.GetChemistryGradeForEdit(id);
             return View(chemistryGrade);
         }
         [HttpPost]
@@ -200,7 +200,7 @@ namespace Aplikacja_webowa_dziennik_elektroniczny.Controllers
         {
             if (ModelState.IsValid)
             {
-                _class1AService.UpdateChemistryGrade(model);
+                _studentsService.UpdateChemistryGrade(model);
                 return RedirectToAction("ChemistryAvarages");
             }
             return View(model);
@@ -209,7 +209,7 @@ namespace Aplikacja_webowa_dziennik_elektroniczny.Controllers
         [HttpGet]
         public IActionResult EditEnglishGrade(int id)
         {
-            var englishGrade = _class1AService.GetEnglishGradeForEdit(id);
+            var englishGrade = _studentsService.GetEnglishGradeForEdit(id);
             return View(englishGrade);
         }
         [HttpPost]
@@ -217,7 +217,7 @@ namespace Aplikacja_webowa_dziennik_elektroniczny.Controllers
         {
             if (ModelState.IsValid)
             {
-                _class1AService.UpdateEnglishGrade(model);
+                _studentsService.UpdateEnglishGrade(model);
                 return RedirectToAction("EnglishAvarages");
             }
             return View(model);
@@ -226,7 +226,7 @@ namespace Aplikacja_webowa_dziennik_elektroniczny.Controllers
         [HttpGet]
         public IActionResult EditGeographyGrade(int id)
         {
-            var geographyGrade = _class1AService.GetGeographyGradeForEdit(id);
+            var geographyGrade = _studentsService.GetGeographyGradeForEdit(id);
             return View(geographyGrade);
         }
         [HttpPost]
@@ -234,7 +234,7 @@ namespace Aplikacja_webowa_dziennik_elektroniczny.Controllers
         {
             if (ModelState.IsValid)
             {
-                _class1AService.UpdateGeographyGrade(model);
+                _studentsService.UpdateGeographyGrade(model);
                 return RedirectToAction("GeographyAvarages");
             }
             return View(model);
@@ -243,7 +243,7 @@ namespace Aplikacja_webowa_dziennik_elektroniczny.Controllers
         [HttpGet]
         public IActionResult EditGermanGrade(int id)
         {
-            var germanGrade = _class1AService.GetGermanGradeForEdit(id);
+            var germanGrade = _studentsService.GetGermanGradeForEdit(id);
             return View(germanGrade);
         }
         [HttpPost]
@@ -251,7 +251,7 @@ namespace Aplikacja_webowa_dziennik_elektroniczny.Controllers
         {
             if (ModelState.IsValid)
             {
-                _class1AService.UpdateGermanGrade(model);
+                _studentsService.UpdateGermanGrade(model);
                 return RedirectToAction("GermanAvarages");
             }
             return View(model);
@@ -260,7 +260,7 @@ namespace Aplikacja_webowa_dziennik_elektroniczny.Controllers
         [HttpGet]
         public IActionResult EditHistoryGrade(int id)
         {
-            var historyGrade = _class1AService.GetHistoryGradeForEdit(id);
+            var historyGrade = _studentsService.GetHistoryGradeForEdit(id);
             return View(historyGrade);
         }
         [HttpPost]
@@ -268,7 +268,7 @@ namespace Aplikacja_webowa_dziennik_elektroniczny.Controllers
         {
             if (ModelState.IsValid)
             {
-                _class1AService.UpdateHistoryGrade(model);
+                _studentsService.UpdateHistoryGrade(model);
                 return RedirectToAction("HistoryAvarages");
             }
             return View(model);
@@ -277,7 +277,7 @@ namespace Aplikacja_webowa_dziennik_elektroniczny.Controllers
         [HttpGet]
         public IActionResult EditMathGrade(int id)
         {
-            var mathGrade = _class1AService.GetMathGradeForEdit(id);
+            var mathGrade = _studentsService.GetMathGradeForEdit(id);
             return View(mathGrade);
         }
         [HttpPost]
@@ -285,7 +285,7 @@ namespace Aplikacja_webowa_dziennik_elektroniczny.Controllers
         {
             if (ModelState.IsValid)
             {
-                _class1AService.UpdateMathGrade(model);
+                _studentsService.UpdateMathGrade(model);
                 return RedirectToAction("MathAvarages");
             }
             return View(model);

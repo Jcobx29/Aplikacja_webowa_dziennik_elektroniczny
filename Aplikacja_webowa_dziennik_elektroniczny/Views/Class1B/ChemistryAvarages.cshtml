@@ -6,35 +6,39 @@
 
 <h1>Chemistry Avarages</h1>
 
-<p>
-    <a class="nav-link text-dark" asp-area="" asp-controller="Class1B" asp-action="StudentsAvarages">Back to previous page</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                <a class="nav-link text-dark" asp-area="" asp-controller="Class1B" asp-action="EditChemistryGrade">Edit grade</a>
-            </th>
-        </tr>
-    </thead>
-</table>
+<div class="flex">
+    <div>
+        <a class="nav-link text-dark" asp-area="" asp-controller="Class1B" asp-action="StudentsAvarages">Back to previous page</a>
+    </div>
+    <div class="next">
+        <a class="nav-link text-dark" asp-area="" asp-controller="Class1B" asp-action="EditChemistryGrade">Edit grade</a>
+    </div>
+</div>
+<style>
+    table {
+        text-align: center;
+    }
+
+    .flex {
+        display: flex;
+    }
+
+    .next {
+        font-weight: bold;
+    }
+
+    th {
+        border: 1px solid;
+        padding: 10px;
+    }
+
+    td {
+        border: 1px solid;
+        padding: 10px;
+    }
+</style>
 <form asp-action="ChemistryAvarages" asp-controller="Class1B" method="post">
     <table class="table">
-        <style>
-            table {
-                text-align: center;
-            }
-
-            th {
-                border: 1px solid;
-                padding: 10px;
-            }
-
-            td {
-                border: 1px solid;
-                padding: 10px;
-            }
-        </style>
         <thead>
             <tr>
                 <th>
@@ -49,7 +53,6 @@
                 <th>
                     HomeWorkAvarage
                 </th>
-                <th></th>
             </tr>
         </thead>
         <tbody>

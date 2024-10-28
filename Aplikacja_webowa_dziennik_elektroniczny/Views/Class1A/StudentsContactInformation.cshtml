@@ -9,24 +9,23 @@
 <p>
     <a class="nav-link text-dark" asp-area="" asp-controller="Class1A" asp-action="Index">Back to previous page</a>
 </p>
+<style>
+    table {
+        text-align: center;
+    }
+
+    th {
+        border: 1px solid;
+        padding: 10px;
+    }
+
+    td {
+        border: 1px solid;
+        padding: 10px;
+    }
+</style>
 <form asp-action="StudentsContactInformation" asp-controller="Class1A" method="post">
 <table class="table">
-    <style>
-        table {
-            text-align: center;
-        }
-
-        th {
-            border: 1px solid;
-            padding: 10px;
-        }
-
-        td {
-            border: 1px solid;
-            padding: 10px;
-        }
-
-    </style>
     <thead>
         <tr>
             <th>
@@ -44,7 +43,6 @@
             <th>
                 Email
             </th>
-            <th></th>
         </tr>
     </thead>
     <tbody>
