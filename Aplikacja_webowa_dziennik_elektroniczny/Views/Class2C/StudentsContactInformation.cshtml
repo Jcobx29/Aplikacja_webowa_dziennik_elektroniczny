@@ -1,0 +1,102 @@
+﻿@model dziennik_elektroniczny.Application.ViewModels.VmForDisplay.ListStudentsContactInfoForListVm
+
+@{
+    ViewData["Title"] = "StudentsContactInformation";
+}
+
+<h1>Students Contact Information</h1>
+
+<p>
+    <a class="nav-link text-dark" asp-area="" asp-controller="Class2C" asp-action="Index">Back to previous page</a>
+</p>
+<style>
+    table {
+        text-align: center;
+    }
+
+    th {
+        border: 1px solid;
+        padding: 10px;
+    }
+
+    td {
+        border: 1px solid;
+        padding: 10px;
+    }
+</style>
+<form asp-action="StudentsContactInformation" asp-controller="Class2C" method="post">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Index number
+                </th>
+                <th>
+                    FirstName
+                </th>
+                <th>
+                    LastName
+                </th>
+                <th>
+                    PhoneNumber
+                </th>
+                <th>
+                    Email
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.StudentsContactInfo)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FirstName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LastName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PhoneNumber)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div class="row">
+        <table>
+            <tr>
+                @for (int i = 1; i < (Math.Ceiling(Model.Count / (double)Model.PageSize) + 1); i++)
+                {
+                    <td style="border: 0px; padding: 0px; width: 10px; height: 100px; font-size: 20px">
+                        @if (i != Model.CurrentPage)
+                        {
+                            <a href="javascript:PagerClick(@i)">@i</a>
+                        }
+                        else
+                        {
+                            <span>@i</span>
+                        }
+                    </td>
+                }
+            </tr>
+        </table>
+        <input type="hidden" name="pageNo" id="pageNo" />
+        <input type="hidden" name="pageSize" id="pageSize" value="10" />
+    </div>
+</form>
+
+@section Scripts
+{
+    <script type="text/javascript">
+        function PagerClick(index) {
+            document.getElementById("pageNo").value = index;
+            document.forms[0].submit();
+        }
+    </script>
+}

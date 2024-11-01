@@ -1,18 +1,18 @@
-﻿@model dziennik_elektroniczny.Application.ViewModels.VmForEdit.EditBiologyVm
+﻿@model dziennik_elektroniczny.Application.ViewModels.VmForEdit.EditMathVm
 
 @{
-    ViewData["Title"] = "EditBiologyGrade";
+    ViewData["Title"] = "EditMathGrade";
 }
 
-<h1>Edit Biology Grade</h1>
+<h1>Edit Math Grade</h1>
 
 <hr />
 <p>
-    <a class="nav-link text-dark" asp-area="" asp-controller="Class1C" asp-action="BiologyAvarages">Back to previous page</a>
+    <a class="nav-link text-dark" asp-area="" asp-controller="Class2C" asp-action="MathAvarages">Back to previous page</a>
 </p>
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="EditBiologyGrade">
+        <form asp-action="EditMathGrade">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Id" class="control-label"></label>

@@ -1,0 +1,150 @@
+﻿@model dziennik_elektroniczny.Application.ViewModels.VmForDisplay.ListAvarageGradesForListVm
+
+@{
+    ViewData["Title"] = "StudentsAvarages";
+}
+
+<h1>Students Avarages</h1>
+<div class="flex">
+    <div>
+        <a class="nav-link text-dark" asp-area="" asp-controller="Class2B" asp-action="Index">Back to previous page</a>
+    </div>
+    <div class="next">
+        <a class="nav-link text-dark" asp-area="" asp-controller="Class2B" asp-action="BiologyAvarages">Biology details</a>
+    </div>
+    <div class="next">
+        <a class="nav-link text-dark" asp-area="" asp-controller="Class2B" asp-action="ChemistryAvarages">Chemistry details</a>
+    </div>
+    <div class="next">
+        <a class="nav-link text-dark" asp-area="" asp-controller="Class2B" asp-action="EnglishAvarages">English details</a>
+    </div>
+    <div class="next">
+        <a class="nav-link text-dark" asp-area="" asp-controller="Class2B" asp-action="GeographyAvarages">Geography details</a>
+    </div>
+    <div class="next">
+        <a class="nav-link text-dark" asp-area="" asp-controller="Class2B" asp-action="GermanAvarages">German details</a>
+    </div>
+    <div class="next">
+        <a class="nav-link text-dark" asp-area="" asp-controller="Class2B" asp-action="HistoryAvarages">History details</a>
+    </div>
+    <div class="next">
+        <a class="nav-link text-dark" asp-area="" asp-controller="Class2B" asp-action="MathAvarages">Math details</a>
+    </div>
+</div>
+<style>
+    table {
+        text-align: center;
+    }
+
+    .flex {
+        display: flex;
+    }
+
+    .next {
+        font-weight: bold;
+    }
+
+    th {
+        border: 1px solid;
+        padding: 10px;
+    }
+
+    td {
+        border: 1px solid;
+        padding: 10px;
+    }
+</style>
+<form asp-action="StudentsAvarages" asp-controller="Class2B" method="post">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Index number
+                </th>
+                <th>
+                    BiologyAvarage
+                </th>
+                <th>
+                    ChemistryAvarage
+                </th>
+                <th>
+                    EnglishAvarage
+                </th>
+                <th>
+                    GeographyAvarage
+                </th>
+                <th>
+                    GermanAvarage
+                </th>
+                <th>
+                    HistoryAvarage
+                </th>
+                <th>
+                    MathAvarage
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.AvarageGrades)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BiologyAvarage)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ChemistryAvarage)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EnglishAvarage)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.GeographyAvarage)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.GermanAvarage)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.HistoryAvarage)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MathAvarage)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div class="row">
+        <table>
+            <tr>
+                @for (int i = 1; i < (Math.Ceiling(Model.Count / (double)Model.PageSize) + 1); i++)
+                {
+                    <td style="border: 0px; padding: 0px; width: 10px; height: 100px; font-size: 20px">
+                        @if (i != Model.CurrentPage)
+                        {
+                            <a href="javascript:PagerClick(@i)">@i</a>
+                        }
+                        else
+                        {
+                            <span>@i</span>
+                        }
+                    </td>
+                }
+            </tr>
+        </table>
+        <input type="hidden" name="pageNo" id="pageNo" />
+        <input type="hidden" name="pageSize" id="pageSize" value="10" />
+    </div>
+</form>
+
+@section Scripts
+{
+    <script type="text/javascript">
+        function PagerClick(index) {
+            document.getElementById("pageNo").value = index;
+            document.forms[0].submit();
+        }
+    </script>
+}
