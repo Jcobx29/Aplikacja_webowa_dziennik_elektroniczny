@@ -63,7 +63,7 @@ namespace Aplikacja_webowa_dziennik_elektroniczny.Controllers
         [HttpGet]
         public IActionResult BiologyAvarages()
         {
-            var model = _studentsService.GetAllBiologyForList(10, 1, "2B");
+            var model = _studentsService.GetAllBiologyForList(10, 1);
             return View(model);
         }
         [HttpPost]
@@ -73,7 +73,7 @@ namespace Aplikacja_webowa_dziennik_elektroniczny.Controllers
             {
                 pageNo = 1;
             }
-            var model = _studentsService.GetAllBiologyForList(pageSize, pageNo.Value, "2B");
+            var model = _studentsService.GetAllBiologyForList(pageSize, pageNo.Value);
             return View(model);
         }
         [HttpGet]

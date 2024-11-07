@@ -13,7 +13,7 @@ namespace dziennik_elektroniczny.Application.Interfaces
         ListStudentForListVm GetAllStudentsForList(int pageSize, int pageNo, string classId);
         ListAvarageGradesForListVm GetAllAvarageGradesForList(int pageSize, int pageNo, string classId);
         ListStudentsContactInfoForListVm GetAllStudentsContanctInfoForList(int pageSize, int pageNo, string classId);
-        ListBiologyForListVm GetAllBiologyForList(int pageSize, int pageNo, string classId);
+        ListBiologyForListVm GetAllBiologyForList(int pageSize, int pageNo);
         ListChemistryForListVm GetAllChemistryForList(int pageSize, int pageNo, string classId);
         ListEnglishForListVm GetAllEnglishForList(int pageSize, int pageNo, string classId);
         ListGeographyForListVm GetAllGeographyForList(int pageSize, int pageNo, string classId);

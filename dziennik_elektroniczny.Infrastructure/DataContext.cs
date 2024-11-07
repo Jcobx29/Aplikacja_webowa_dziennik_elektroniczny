@@ -24,7 +24,10 @@ namespace dziennik_elektroniczny.Infrastructure
         public DbSet<ContactStudentInfo> ContactStudentInfo { get; set; }
         public DbSet<Teacher> Teachers { get; set; }
         public DbSet<TeacherAddress> TeacherAddresses { get; set; }
-        public DbSet<TeacherContactInfo> TeacherContactInfos { get; set; }     
+        public DbSet<TeacherContactInfo> TeacherContactInfos { get; set; } 
+        public DbSet<Subject> Subjects { get; set; }
+        public DbSet<Grades> Grades { get; set; }
+
 
         public DataContext(DbContextOptions options) : base(options)
         {
@@ -42,6 +45,11 @@ namespace dziennik_elektroniczny.Infrastructure
             builder.Entity<Student>().HasOne(a => a.History).WithOne(b => b.Student).HasForeignKey<History>(e => e.StudentRef);
             builder.Entity<Student>().HasOne(a => a.Maths).WithOne(b => b.Student).HasForeignKey<Maths>(e => e.StudentRef);
             builder.Entity<Student>().HasOne(a => a.ContactStudentInfo).WithOne(b => b.Student).HasForeignKey<ContactStudentInfo>(e => e.StudentRef);
+
+            builder.Entity<Grades>().HasKey(it => new {it.SubjectId, it.StudentId});
+
+            builder.Entity<Grades>().HasOne<Subject>(it => it.Subject).WithMany(i => i.Grades).HasForeignKey(it => it.SubjectId);   
+            builder.Entity<Grades>().HasOne<Student>(it => it.Student).WithMany(i => i.Grades).HasForeignKey(it => it.StudentId);   
 
             builder.Entity<Teacher>().HasOne(a => a.TeacherAddress).WithOne(b => b.Teacher).HasForeignKey<TeacherAddress>(e => e.TeacherRef);
             builder.Entity<Teacher>().HasOne(a => a.TeacherContactInfo).WithOne(b => b.Teacher).HasForeignKey<TeacherContactInfo>(e => e.TeacherRef);
