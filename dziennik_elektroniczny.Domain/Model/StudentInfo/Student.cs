@@ -20,6 +20,5 @@ namespace dziennik_elektroniczny.Domain.Model.StudentInfo
         public German German { get; set; }
         public History History { get; set; }
         public Maths Maths { get; set; }
-        public ICollection<Grades> Grades { get; set; }
     }
 }

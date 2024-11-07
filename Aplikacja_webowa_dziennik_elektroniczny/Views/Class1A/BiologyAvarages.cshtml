@@ -58,7 +58,10 @@
         <tbody>
             @foreach (var item in Model.Biology)
             {
-                <tr>                    
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Id)
+                    </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.TestAvarage)
                     </td>

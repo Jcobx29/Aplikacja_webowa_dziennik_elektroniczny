@@ -63,7 +63,7 @@ namespace OnlineGradeBookMVC.Controllers
         [HttpGet]
         public IActionResult BiologyAvarages()
         {
-            var model = _studentsService.GetAllBiologyForList(10, 1);
+            var model = _studentsService.GetAllBiologyForList(10, 1, "1A");
             return View(model);
         }
         [HttpPost]
@@ -73,7 +73,7 @@ namespace OnlineGradeBookMVC.Controllers
             {
                 pageNo = 1;
             }
-            var model = _studentsService.GetAllBiologyForList(pageSize, pageNo.Value);
+            var model = _studentsService.GetAllBiologyForList(pageSize, pageNo.Value, "1A");
             return View(model);
         }
         [HttpGet]

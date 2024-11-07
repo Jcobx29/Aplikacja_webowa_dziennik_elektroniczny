@@ -10,18 +10,20 @@ using System.Threading.Tasks;
 
 namespace dziennik_elektroniczny.Application.ViewModels.VmForDisplay
 {
-    public class BiologyForListVm : IMapFrom<Grades>
+    public class BiologyForListVm : IMapFrom<Student>
     {
+        public int Id { get; set; }
         public double TestAvarage { get; set; }
         public double ShortQuizAvarage { get; set; }
         public double HomeworkAvarage { get; set; }
 
         public void Mapping(Profile profile)
         {
-            profile.CreateMap<Grades, BiologyForListVm>()                 
-                .ForMember(d => d.TestAvarage, opt => opt.MapFrom(s => s.TestAvarage))
-                .ForMember(d => d.ShortQuizAvarage, opt => opt.MapFrom(s => s.ShortQuizAvarage))
-                .ForMember(d => d.HomeworkAvarage, opt => opt.MapFrom(s => s.HomeworkAvarage));
+            profile.CreateMap<Student, BiologyForListVm>()
+                .ForMember(d => d.Id, opt => opt.MapFrom(s => s.Id))
+                .ForMember(d => d.TestAvarage, opt => opt.MapFrom(s => s.Biology.TestAvarage))
+                .ForMember(d => d.ShortQuizAvarage, opt => opt.MapFrom(s => s.Biology.ShortQuizAvarage))
+                .ForMember(d => d.HomeworkAvarage, opt => opt.MapFrom(s => s.Biology.HomeworkAvarage));
         }
     }
 }

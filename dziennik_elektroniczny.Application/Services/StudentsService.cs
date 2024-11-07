@@ -39,9 +39,9 @@ namespace dziennik_elektroniczny.Application.Services
             };
             return student1AList;
         }
-        public ListAvarageGradesForListVm GetAllAvarageGradesForList(int pageSize, int pageNo, string subjectId, string classId)
+        public ListAvarageGradesForListVm GetAllAvarageGradesForList(int pageSize, int pageNo, string classId)
         {
-            var studentsAvarages = _studentsRepository.GetAllGrades(subjectId, classId)
+            var studentsAvarages = _studentsRepository.GetAll1AStudentsInfo(classId)
                 .ProjectTo<AvarageGradesForListVm>(_mapper.ConfigurationProvider).ToList();
             var studentsAvaragesToShow = studentsAvarages.Skip(pageSize * (pageNo - 1)).Take(pageSize).ToList();
             var student1AList = new ListAvarageGradesForListVm()
@@ -53,7 +53,6 @@ namespace dziennik_elektroniczny.Application.Services
             };
             return student1AList;
         }
-
 
         public ListStudentsContactInfoForListVm GetAllStudentsContanctInfoForList(int pageSize, int pageNo, string classId)
         {
@@ -69,9 +68,9 @@ namespace dziennik_elektroniczny.Application.Services
             };
             return student1AContactInfoList;
         }
-        public ListBiologyForListVm GetAllBiologyForList(int pageSize, int pageNo)
+        public ListBiologyForListVm GetAllBiologyForList(int pageSize, int pageNo, string classId)
         {
-            var biology = _studentsRepository.GetAllGrades()
+            var biology = _studentsRepository.GetAll1AStudentsInfo(classId)
                 .ProjectTo<BiologyForListVm>(_mapper.ConfigurationProvider).ToList();
             var biologyToShow = biology.Skip(pageSize * (pageNo - 1)).Take(pageSize).ToList();
             var biology1AList = new ListBiologyForListVm()
