@@ -1,0 +1,49 @@
+﻿@model dziennik_elektroniczny.Application.ViewModels.VmForEdit.EditGermanVm
+
+@{
+    ViewData["Title"] = "EditGermanGrade";
+}
+
+<h1>Edit German Grade</h1>
+
+<hr />
+<p>
+    <a class="nav-link text-dark" asp-area="" asp-controller="Class3B" asp-action="GermanAvarages">Back to previous page</a>
+</p>
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="EditGermanGrade">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Id" class="control-label"></label>
+                <input asp-for="Id" class="form-control" />
+                <span asp-validation-for="Id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TestAvarage" class="control-label"></label>
+                <input asp-for="TestAvarage" class="form-control" />
+                <span asp-validation-for="TestAvarage" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ShortQuizAvarage" class="control-label"></label>
+                <input asp-for="ShortQuizAvarage" class="form-control" />
+                <span asp-validation-for="ShortQuizAvarage" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HomeworkAvarage" class="control-label"></label>
+                <input asp-for="HomeworkAvarage" class="form-control" />
+                <span asp-validation-for="HomeworkAvarage" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

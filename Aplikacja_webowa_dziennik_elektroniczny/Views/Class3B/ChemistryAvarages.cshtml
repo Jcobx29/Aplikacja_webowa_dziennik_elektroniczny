@@ -1,17 +1,17 @@
-﻿@model dziennik_elektroniczny.Application.ViewModels.VmForDisplay.ListMathForListVm
+﻿@model dziennik_elektroniczny.Application.ViewModels.VmForDisplay.ListChemistryForListVm
 
 @{
-    ViewData["Title"] = "MathAvarages";
+    ViewData["Title"] = "ChemistryAvarages";
 }
 
-<h1>Math Avarages</h1>
+<h1>Chemistry Avarages</h1>
 
 <div class="flex">
     <div>
-        <a class="nav-link text-dark" asp-area="" asp-controller="Class2A" asp-action="StudentsAvarages">Back to previous page</a>
+        <a class="nav-link text-dark" asp-area="" asp-controller="Class3B" asp-action="StudentsAvarages">Back to previous page</a>
     </div>
     <div class="next">
-        <a class="nav-link text-dark" asp-area="" asp-controller="Class2A" asp-action="EditMathGrade">Edit grade</a>
+        <a class="nav-link text-dark" asp-area="" asp-controller="Class3B" asp-action="EditChemistryGrade">Edit grade</a>
     </div>
 </div>
 <style>
@@ -37,7 +37,7 @@
         padding: 10px;
     }
 </style>
-<form asp-action="MathAvarages" asp-controller="Class2A" method="post">
+<form asp-action="ChemistryAvarages" asp-controller="Class3B" method="post">
     <table class="table">
         <thead>
             <tr>
@@ -56,7 +56,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach (var item in Model.Maths)
+            @foreach (var item in Model.Chemistry)
             {
                 <tr>
                     <td>
