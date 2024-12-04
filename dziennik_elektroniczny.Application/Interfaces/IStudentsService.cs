@@ -13,26 +13,8 @@ namespace dziennik_elektroniczny.Application.Interfaces
         ListStudentForListVm GetAllStudentsForList(int pageSize, int pageNo, string classId);
         ListAvarageGradesForListVm GetAllAvarageGradesForList(int pageSize, int pageNo, string classId);
         ListStudentsContactInfoForListVm GetAllStudentsContanctInfoForList(int pageSize, int pageNo, string classId);
-        ListBiologyForListVm GetAllBiologyForList(int pageSize, int pageNo, string classId);
-        ListChemistryForListVm GetAllChemistryForList(int pageSize, int pageNo, string classId);
-        ListEnglishForListVm GetAllEnglishForList(int pageSize, int pageNo, string classId);
-        ListGeographyForListVm GetAllGeographyForList(int pageSize, int pageNo, string classId);
-        ListGermanForListVm GetAllGermanForList(int pageSize, int pageNo, string classId);
-        ListHistoryForListVm GetAllHistoryForList(int pageSize, int pageNo, string classId);
-        ListMathForListVm GetAllMathForList(int pageSize, int pageNo, string classId);
-        EditBiologyVm GetBiologyGradeForEdit(int id);
-        void UpdateBiologyGrade(EditBiologyVm model);
-        EditChemistryVm GetChemistryGradeForEdit(int id);
-        void UpdateChemistryGrade(EditChemistryVm model);
-        EditEnglishVm GetEnglishGradeForEdit(int id);
-        void UpdateEnglishGrade(EditEnglishVm model);
-        EditGeographyVm GetGeographyGradeForEdit(int id);
-        void UpdateGeographyGrade(EditGeographyVm model);
-        EditGermanVm GetGermanGradeForEdit(int id);
-        void UpdateGermanGrade(EditGermanVm model);
-        EditHistoryVm GetHistoryGradeForEdit(int id);
-        void UpdateHistoryGrade(EditHistoryVm model);
-        EditMathVm GetMathGradeForEdit(int id);
-        void UpdateMathGrade(EditMathVm model);
+        ListGradesForListVm GetAllGradesForList(int pageSize, int pageNo, string classId, int subjectId);
+        EditGradesVm GetSingleGradeForEdit(int studentId, int subjectId);
+        void UpdateSingleGrade(EditGradesVm model);
     }
 }

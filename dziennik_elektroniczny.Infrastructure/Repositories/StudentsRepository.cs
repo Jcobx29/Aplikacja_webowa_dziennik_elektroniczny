@@ -18,14 +18,21 @@ namespace dziennik_elektroniczny.Infrastructure.Repositories
             _dataContext = dataContext;
         }
 
-        public IQueryable<Student> GetAll1AStudentsInfo(string classId)
-        {
-            return _dataContext.Students.Where(p => p.ClassId == classId);
+        public IQueryable<Student> GetAllStudentsInfo(string classId)
+        {            
+            return _dataContext.Students.Where(p => p.ClassId == classId).Include(s => s.Grades);
         }
-
-        public Biology GetBiologyGrade(int gradeId)
+        public IQueryable<Grades> GetAllGrades()
         {
-            return _dataContext.Biology.FirstOrDefault(p => p.Id == gradeId);
+            return _dataContext.Grades;
+        }
+        public IQueryable<Grades> GetAllGradesDetails(string classId, int subjectId)
+        {
+            return _dataContext.Grades.Where(p => p.Student.ClassId == classId && p.SubjectId == subjectId);
+        }
+        public Grades GetSingleGrade(int studentId, int subjectId)
+        {
+            return _dataContext.Grades.FirstOrDefault(p => p.StudentId == studentId && p.SubjectId == subjectId);
         }
 
         public Chemistry GetChemistryGrade(int gradeId)
@@ -58,12 +65,12 @@ namespace dziennik_elektroniczny.Infrastructure.Repositories
             return _dataContext.Maths.FirstOrDefault(p => p.Id == gradeId);
         }
 
-        public void UpdateBiologyGrade(Biology biology)
+        public void UpdateSingleGrade(Grades grade)
         {
-            _dataContext.Attach(biology);
-            _dataContext.Entry(biology).Property("TestAvarage").IsModified = true;
-            _dataContext.Entry(biology).Property("ShortQuizAvarage").IsModified = true;
-            _dataContext.Entry(biology).Property("HomeworkAvarage").IsModified = true;
+            _dataContext.Attach(grade);
+            _dataContext.Entry(grade).Property("TestAvarage").IsModified = true;
+            _dataContext.Entry(grade).Property("ShortQuizAvarage").IsModified = true;
+            _dataContext.Entry(grade).Property("HomeworkAvarage").IsModified = true;
             _dataContext.SaveChanges();
         }
 

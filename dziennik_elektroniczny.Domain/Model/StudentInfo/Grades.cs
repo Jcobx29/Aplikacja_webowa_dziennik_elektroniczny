@@ -12,8 +12,8 @@ namespace dziennik_elektroniczny.Domain.Model.StudentInfo
         public Student Student { get; set; }
         public int SubjectId { get; set; }
         public Subject Subject { get; set; }
-        public double HomewokAvarage { get; set; }
-        public double ShorQuizAvarage { get; set; }
+        public double HomeworkAvarage { get; set; }
+        public double ShortQuizAvarage { get; set; }
         public double TestAvarage { get; set; }
     }
 }

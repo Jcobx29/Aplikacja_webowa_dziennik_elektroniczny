@@ -10,9 +10,11 @@ namespace dziennik_elektroniczny.Domain.Interfaces
 {
     public interface IStudentsRepository
     {
-        IQueryable<Student> GetAll1AStudentsInfo(string classId);
-        Biology GetBiologyGrade(int gradeid);
-        void UpdateBiologyGrade(Biology biology);
+        IQueryable<Student> GetAllStudentsInfo(string classId);
+        IQueryable<Grades> GetAllGrades();
+        IQueryable<Grades> GetAllGradesDetails(string classId, int subjectId);
+        Grades GetSingleGrade(int studentId, int subjectId);
+        void UpdateSingleGrade(Grades grades);
         Chemistry GetChemistryGrade(int gradeid);
         void UpdateChemistryGrade(Chemistry chemistry);
         English GetEnglishGrade(int gradeid);

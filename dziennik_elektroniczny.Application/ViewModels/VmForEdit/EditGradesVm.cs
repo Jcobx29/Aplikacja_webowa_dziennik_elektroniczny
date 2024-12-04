@@ -10,16 +10,18 @@ using System.Threading.Tasks;
 
 namespace dziennik_elektroniczny.Application.ViewModels.VmForEdit
 {
-    public class EditMathVm : IMapFrom<Maths>
+    public class EditGradesVm : IMapFrom<Grades>
     {
-        public int Id { get; set; }
-        public double TestAvarage { get; set; }
-        public double ShortQuizAvarage { get; set; }
+        public int StudentId { get; set; }
+        public int SubjectId { get; set; }
         public double HomeworkAvarage { get; set; }
+        public double ShortQuizAvarage { get; set; }
+        public double TestAvarage { get; set; }
         public void Mapping(Profile profile)
         {
-            profile.CreateMap<EditMathVm, Maths>()
-                .ForMember(d => d.Id, opt => opt.MapFrom(s => s.Id))
+            profile.CreateMap<EditGradesVm, Grades>()
+                .ForMember(d => d.StudentId, opt => opt.MapFrom(s => s.StudentId))
+                .ForMember(d => d.SubjectId, opt => opt.MapFrom(s => s.SubjectId))
                 .ForMember(d => d.TestAvarage, opt => opt.MapFrom(s => s.TestAvarage))
                 .ForMember(d => d.ShortQuizAvarage, opt => opt.MapFrom(s => s.ShortQuizAvarage))
                 .ForMember(d => d.HomeworkAvarage, opt => opt.MapFrom(s => s.HomeworkAvarage))
