@@ -11,7 +11,7 @@ using dziennik_elektroniczny.Domain.Model;
 
 namespace dziennik_elektroniczny.Infrastructure
 {
-    public class DataContext : DbContext
+    public class DataContext : IdentityDbContext
     {
         public DbSet<Student> Students { get; set; }
         public DbSet<Grades> Grades { get; set; }
