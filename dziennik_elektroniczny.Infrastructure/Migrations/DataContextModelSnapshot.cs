@@ -17,7 +17,7 @@ namespace dziennik_elektroniczny.Infrastructure.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.8")
+                .HasAnnotation("ProductVersion", "8.0.10")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -391,6 +391,30 @@ namespace dziennik_elektroniczny.Infrastructure.Migrations
                     b.ToTable("German");
                 });
 
+            modelBuilder.Entity("dziennik_elektroniczny.Domain.Model.StudentInfo.Grades", b =>
+                {
+                    b.Property<int>("SubjectId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("StudentId")
+                        .HasColumnType("int");
+
+                    b.Property<double>("HomeworkAvarage")
+                        .HasColumnType("float");
+
+                    b.Property<double>("ShortQuizAvarage")
+                        .HasColumnType("float");
+
+                    b.Property<double>("TestAvarage")
+                        .HasColumnType("float");
+
+                    b.HasKey("SubjectId", "StudentId");
+
+                    b.HasIndex("StudentId");
+
+                    b.ToTable("Grades");
+                });
+
             modelBuilder.Entity("dziennik_elektroniczny.Domain.Model.StudentInfo.History", b =>
                 {
                     b.Property<int>("Id")
@@ -470,6 +494,23 @@ namespace dziennik_elektroniczny.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Students");
+                });
+
+            modelBuilder.Entity("dziennik_elektroniczny.Domain.Model.StudentInfo.Subject", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("SubjectName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Subjects");
                 });
 
             modelBuilder.Entity("dziennik_elektroniczny.Domain.Model.TeacherInfo.Teacher", b =>
@@ -680,6 +721,25 @@ namespace dziennik_elektroniczny.Infrastructure.Migrations
                     b.Navigation("Student");
                 });
 
+            modelBuilder.Entity("dziennik_elektroniczny.Domain.Model.StudentInfo.Grades", b =>
+                {
+                    b.HasOne("dziennik_elektroniczny.Domain.Model.StudentInfo.Student", "Student")
+                        .WithMany("Grades")
+                        .HasForeignKey("StudentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("dziennik_elektroniczny.Domain.Model.StudentInfo.Subject", "Subject")
+                        .WithMany("Grades")
+                        .HasForeignKey("SubjectId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Student");
+
+                    b.Navigation("Subject");
+                });
+
             modelBuilder.Entity("dziennik_elektroniczny.Domain.Model.StudentInfo.History", b =>
                 {
                     b.HasOne("dziennik_elektroniczny.Domain.Model.StudentInfo.Student", "Student")
@@ -744,11 +804,18 @@ namespace dziennik_elektroniczny.Infrastructure.Migrations
                     b.Navigation("German")
                         .IsRequired();
 
+                    b.Navigation("Grades");
+
                     b.Navigation("History")
                         .IsRequired();
 
                     b.Navigation("Maths")
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("dziennik_elektroniczny.Domain.Model.StudentInfo.Subject", b =>
+                {
+                    b.Navigation("Grades");
                 });
 
             modelBuilder.Entity("dziennik_elektroniczny.Domain.Model.TeacherInfo.Teacher", b =>

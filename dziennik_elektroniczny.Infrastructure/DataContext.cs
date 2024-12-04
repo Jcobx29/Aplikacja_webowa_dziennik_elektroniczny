@@ -21,6 +21,8 @@ namespace dziennik_elektroniczny.Infrastructure
         public DbSet<History> History { get; set; }
         public DbSet<Maths> Maths { get; set; }
         public DbSet<Student> Students { get; set; }
+        public DbSet<Grades> Grades { get; set; }
+        public DbSet<Subject> Subjects { get; set; }
         public DbSet<ContactStudentInfo> ContactStudentInfo { get; set; }
         public DbSet<Teacher> Teachers { get; set; }
         public DbSet<TeacherAddress> TeacherAddresses { get; set; }

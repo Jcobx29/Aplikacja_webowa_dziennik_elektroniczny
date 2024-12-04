@@ -63,7 +63,7 @@ namespace OnlineGradeBookMVC.Controllers
         [HttpGet]
         public IActionResult BiologyAvarages()
         {
-            var model = _studentsService.GetAllBiologyForList(10, 1, "1A");
+            var model = _studentsService.GetAllGradesForList(10, 1, "1A", 1);
             return View(model);
         }
         [HttpPost]
@@ -73,13 +73,13 @@ namespace OnlineGradeBookMVC.Controllers
             {
                 pageNo = 1;
             }
-            var model = _studentsService.GetAllBiologyForList(pageSize, pageNo.Value, "1A");
+            var model = _studentsService.GetAllGradesForList(pageSize, pageNo.Value, "1A", 1);
             return View(model);
         }
         [HttpGet]
         public IActionResult ChemistryAvarages()
         {
-            var model = _studentsService.GetAllChemistryForList(10, 1, "1A");
+            var model = _studentsService.GetAllGradesForList(10, 1, "1A", 2);
             return View(model);
         }
         [HttpPost]
@@ -89,13 +89,13 @@ namespace OnlineGradeBookMVC.Controllers
             {
                 pageNo = 1;
             }
-            var model = _studentsService.GetAllChemistryForList(pageSize, pageNo.Value, "1A");
+            var model = _studentsService.GetAllGradesForList(pageSize, pageNo.Value, "1A",2);
             return View(model);
         }
         [HttpGet]
         public IActionResult EnglishAvarages()
         {
-            var model = _studentsService.GetAllEnglishForList(10, 1, "1A");
+            var model = _studentsService.GetAllGradesForList(10, 1, "1A", 3);
             return View(model);
         }
         [HttpPost]
@@ -105,13 +105,13 @@ namespace OnlineGradeBookMVC.Controllers
             {
                 pageNo = 1;
             }
-            var model = _studentsService.GetAllEnglishForList(pageSize, pageNo.Value, "1A");
+            var model = _studentsService.GetAllGradesForList(pageSize, pageNo.Value, "1A", 3);
             return View(model);
         }
         [HttpGet]
         public IActionResult GeographyAvarages()
         {
-            var model = _studentsService.GetAllGeographyForList(10, 1, "1A");
+            var model = _studentsService.GetAllGradesForList(10, 1, "1A", 4);
             return View(model);
         }
         [HttpPost]
@@ -121,13 +121,13 @@ namespace OnlineGradeBookMVC.Controllers
             {
                 pageNo = 1;
             }
-            var model = _studentsService.GetAllGeographyForList(pageSize, pageNo.Value, "1A");
+            var model = _studentsService.GetAllGradesForList(pageSize, pageNo.Value, "1A", 4);
             return View(model);
         }
         [HttpGet]
         public IActionResult GermanAvarages()
         {
-            var model = _studentsService.GetAllGermanForList(10, 1, "1A");
+            var model = _studentsService.GetAllGradesForList(10, 1, "1A", 5);
             return View(model);
         }
         [HttpPost]
@@ -137,13 +137,13 @@ namespace OnlineGradeBookMVC.Controllers
             {
                 pageNo = 1;
             }
-            var model = _studentsService.GetAllGermanForList(pageSize, pageNo.Value, "1A");
+            var model = _studentsService.GetAllGradesForList(pageSize, pageNo.Value, "1A", 5);
             return View(model);
         }
         [HttpGet]
         public IActionResult HistoryAvarages()
         {
-            var model = _studentsService.GetAllHistoryForList(10, 1, "1A");
+            var model = _studentsService.GetAllGradesForList(10, 1, "1A", 6);
             return View(model);
         }
         [HttpPost]
@@ -153,13 +153,13 @@ namespace OnlineGradeBookMVC.Controllers
             {
                 pageNo = 1;
             }
-            var model = _studentsService.GetAllHistoryForList(pageSize, pageNo.Value, "1A");
+            var model = _studentsService.GetAllGradesForList(pageSize, pageNo.Value, "1A", 6);
             return View(model);
         }
         [HttpGet]
         public IActionResult MathAvarages()
         {
-            var model = _studentsService.GetAllMathForList(10, 1, "1A");
+            var model = _studentsService.GetAllGradesForList(10, 1, "1A", 7);
             return View(model);
         }
         [HttpPost]
@@ -169,124 +169,124 @@ namespace OnlineGradeBookMVC.Controllers
             {
                 pageNo = 1;
             }
-            var model = _studentsService.GetAllMathForList(pageSize, pageNo.Value, "1A");
+            var model = _studentsService.GetAllGradesForList(pageSize, pageNo.Value, "1A", 7);
             return View(model);
         }
 
         [HttpGet]
-        public IActionResult EditBiologyGrade(int id)
+        public IActionResult EditBiologyGrade(int studentId)
         {
-            var biologyGrade = _studentsService.GetBiologyGradeForEdit(id);
+            var biologyGrade = _studentsService.GetSingleGradeForEdit(studentId, 1);
             return View(biologyGrade);
         }
         [HttpPost]
-        public IActionResult EditBiologyGrade(EditBiologyVm model)
+        public IActionResult EditBiologyGrade(EditGradesVm model)
         {
             if (ModelState.IsValid)
             {
-                _studentsService.UpdateBiologyGrade(model);
+                _studentsService.UpdateSingleGrade(model);
                 return RedirectToAction("BiologyAvarages");
             }
             return View(model);
         }
 
         [HttpGet]
-        public IActionResult EditChemistryGrade(int id)
+        public IActionResult EditChemistryGrade(int studentId)
         {
-            var chemistryGrade = _studentsService.GetChemistryGradeForEdit(id);
+            var chemistryGrade = _studentsService.GetSingleGradeForEdit(studentId, 2);
             return View(chemistryGrade);
         }
         [HttpPost]
-        public IActionResult EditChemistryGrade(EditChemistryVm model)
+        public IActionResult EditChemistryGrade(EditGradesVm model)
         {
             if (ModelState.IsValid)
             {
-                _studentsService.UpdateChemistryGrade(model);
+                _studentsService.UpdateSingleGrade(model);
                 return RedirectToAction("ChemistryAvarages");
             }
             return View(model);
         }
 
         [HttpGet]
-        public IActionResult EditEnglishGrade(int id)
+        public IActionResult EditEnglishGrade(int studentId)
         {
-            var englishGrade = _studentsService.GetEnglishGradeForEdit(id);
+            var englishGrade = _studentsService.GetSingleGradeForEdit(studentId, 3);
             return View(englishGrade);
         }
         [HttpPost]
-        public IActionResult EditEnglishGrade(EditEnglishVm model)
+        public IActionResult EditEnglishGrade(EditGradesVm model)
         {
             if (ModelState.IsValid)
             {
-                _studentsService.UpdateEnglishGrade(model);
+                _studentsService.UpdateSingleGrade(model);
                 return RedirectToAction("EnglishAvarages");
             }
             return View(model);
         }
 
         [HttpGet]
-        public IActionResult EditGeographyGrade(int id)
+        public IActionResult EditGeographyGrade(int studentId)
         {
-            var geographyGrade = _studentsService.GetGeographyGradeForEdit(id);
+            var geographyGrade = _studentsService.GetSingleGradeForEdit(studentId, 4);
             return View(geographyGrade);
         }
         [HttpPost]
-        public IActionResult EditGeographyGrade(EditGeographyVm model)
+        public IActionResult EditGeographyGrade(EditGradesVm model)
         {
             if (ModelState.IsValid)
             {
-                _studentsService.UpdateGeographyGrade(model);
+                _studentsService.UpdateSingleGrade(model);
                 return RedirectToAction("GeographyAvarages");
             }
             return View(model);
         }
 
         [HttpGet]
-        public IActionResult EditGermanGrade(int id)
+        public IActionResult EditGermanGrade(int studentId)
         {
-            var germanGrade = _studentsService.GetGermanGradeForEdit(id);
+            var germanGrade = _studentsService.GetSingleGradeForEdit(studentId, 5);
             return View(germanGrade);
         }
         [HttpPost]
-        public IActionResult EditGermanGrade(EditGermanVm model)
+        public IActionResult EditGermanGrade(EditGradesVm model)
         {
             if (ModelState.IsValid)
             {
-                _studentsService.UpdateGermanGrade(model);
+                _studentsService.UpdateSingleGrade(model);
                 return RedirectToAction("GermanAvarages");
             }
             return View(model);
         }
 
         [HttpGet]
-        public IActionResult EditHistoryGrade(int id)
+        public IActionResult EditHistoryGrade(int studentId)
         {
-            var historyGrade = _studentsService.GetHistoryGradeForEdit(id);
+            var historyGrade = _studentsService.GetSingleGradeForEdit(studentId, 6);
             return View(historyGrade);
         }
         [HttpPost]
-        public IActionResult EditHistoryGrade(EditHistoryVm model)
+        public IActionResult EditHistoryGrade(EditGradesVm model)
         {
             if (ModelState.IsValid)
             {
-                _studentsService.UpdateHistoryGrade(model);
+                _studentsService.UpdateSingleGrade(model);
                 return RedirectToAction("HistoryAvarages");
             }
             return View(model);
         }
 
         [HttpGet]
-        public IActionResult EditMathGrade(int id)
+        public IActionResult EditMathGrade(int studentId)
         {
-            var mathGrade = _studentsService.GetMathGradeForEdit(id);
+            var mathGrade = _studentsService.GetSingleGradeForEdit(studentId, 7);
             return View(mathGrade);
         }
         [HttpPost]
-        public IActionResult EditMathGrade(EditMathVm model)
+        public IActionResult EditMathGrade(EditGradesVm model)
         {
             if (ModelState.IsValid)
             {
-                _studentsService.UpdateMathGrade(model);
+                _studentsService.UpdateSingleGrade(model);
                 return RedirectToAction("MathAvarages");
             }
             return View(model);
