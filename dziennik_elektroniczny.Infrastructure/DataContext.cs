@@ -11,15 +11,8 @@ using dziennik_elektroniczny.Domain.Model;
 
 namespace dziennik_elektroniczny.Infrastructure
 {
-    public class DataContext : IdentityDbContext
+    public class DataContext : DbContext
     {
-        public DbSet<Biology> Biology { get; set; }
-        public DbSet<Chemistry> Chemistry { get; set; }
-        public DbSet<English> English { get; set; }
-        public DbSet<Geography> Geography { get; set; }
-        public DbSet<German> German { get; set; }
-        public DbSet<History> History { get; set; }
-        public DbSet<Maths> Maths { get; set; }
         public DbSet<Student> Students { get; set; }
         public DbSet<Grades> Grades { get; set; }
         public DbSet<Subject> Subjects { get; set; }
@@ -35,14 +28,6 @@ namespace dziennik_elektroniczny.Infrastructure
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);                        
-
-            builder.Entity<Student>().HasOne(a => a.Biology).WithOne(b => b.Student).HasForeignKey<Biology>(e => e.StudentRef);
-            builder.Entity<Student>().HasOne(a => a.Chemistry).WithOne(b => b.Student).HasForeignKey<Chemistry>(e => e.StudentRef);
-            builder.Entity<Student>().HasOne(a => a.English).WithOne(b => b.Student).HasForeignKey<English>(e => e.StudentRef);
-            builder.Entity<Student>().HasOne(a => a.Geography).WithOne(b => b.Student).HasForeignKey<Geography>(e => e.StudentRef);
-            builder.Entity<Student>().HasOne(a => a.German).WithOne(b => b.Student).HasForeignKey<German>(e => e.StudentRef);
-            builder.Entity<Student>().HasOne(a => a.History).WithOne(b => b.Student).HasForeignKey<History>(e => e.StudentRef);
-            builder.Entity<Student>().HasOne(a => a.Maths).WithOne(b => b.Student).HasForeignKey<Maths>(e => e.StudentRef);
             builder.Entity<Student>().HasOne(a => a.ContactStudentInfo).WithOne(b => b.Student).HasForeignKey<ContactStudentInfo>(e => e.StudentRef);
 
             builder.Entity<Grades>().HasKey(it => new {it.SubjectId, it.StudentId});

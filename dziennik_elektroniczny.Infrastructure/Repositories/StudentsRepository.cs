@@ -34,97 +34,12 @@ namespace dziennik_elektroniczny.Infrastructure.Repositories
         {
             return _dataContext.Grades.FirstOrDefault(p => p.StudentId == studentId && p.SubjectId == subjectId);
         }
-
-        public Chemistry GetChemistryGrade(int gradeId)
-        {
-            return _dataContext.Chemistry.FirstOrDefault(p => p.Id == gradeId);
-        }
-
-        public English GetEnglishGrade(int gradeId)
-        {
-            return _dataContext.English.FirstOrDefault(p => p.Id == gradeId);
-        }
-
-        public Geography GetGeographyGrade(int gradeId)
-        {
-            return _dataContext.Geography.FirstOrDefault(p => p.Id == gradeId);
-        }
-
-        public German GetGermanGrade(int gradeId)
-        {
-            return _dataContext.German.FirstOrDefault(p => p.Id == gradeId);
-        }
-
-        public History GetHistoryGrade(int gradeId)
-        {
-            return _dataContext.History.FirstOrDefault(p => p.Id == gradeId);
-        }
-
-        public Maths GetMathGrade(int gradeId)
-        {
-            return _dataContext.Maths.FirstOrDefault(p => p.Id == gradeId);
-        }
-
         public void UpdateSingleGrade(Grades grade)
         {
             _dataContext.Attach(grade);
             _dataContext.Entry(grade).Property("TestAvarage").IsModified = true;
             _dataContext.Entry(grade).Property("ShortQuizAvarage").IsModified = true;
             _dataContext.Entry(grade).Property("HomeworkAvarage").IsModified = true;
-            _dataContext.SaveChanges();
-        }
-
-        public void UpdateChemistryGrade(Chemistry chemistry)
-        {
-            _dataContext.Attach(chemistry);
-            _dataContext.Entry(chemistry).Property("TestAvarage").IsModified = true;
-            _dataContext.Entry(chemistry).Property("ShortQuizAvarage").IsModified = true;
-            _dataContext.Entry(chemistry).Property("HomeworkAvarage").IsModified = true;
-            _dataContext.SaveChanges();
-        }
-
-        public void UpdateEnglishGrade(English english)
-        {
-            _dataContext.Attach(english);
-            _dataContext.Entry(english).Property("TestAvarage").IsModified = true;
-            _dataContext.Entry(english).Property("ShortQuizAvarage").IsModified = true;
-            _dataContext.Entry(english).Property("HomeworkAvarage").IsModified = true;
-            _dataContext.SaveChanges();
-        }
-
-        public void UpdateGeographyGrade(Geography geography)
-        {
-            _dataContext.Attach(geography);
-            _dataContext.Entry(geography).Property("TestAvarage").IsModified = true;
-            _dataContext.Entry(geography).Property("ShortQuizAvarage").IsModified = true;
-            _dataContext.Entry(geography).Property("HomeworkAvarage").IsModified = true;
-            _dataContext.SaveChanges();
-        }
-
-        public void UpdateGermanGrade(German german)
-        {
-            _dataContext.Attach(german);
-            _dataContext.Entry(german).Property("TestAvarage").IsModified = true;
-            _dataContext.Entry(german).Property("ShortQuizAvarage").IsModified = true;
-            _dataContext.Entry(german).Property("HomeworkAvarage").IsModified = true;
-            _dataContext.SaveChanges();
-        }
-
-        public void UpdateHistoryGrade(History history)
-        {
-            _dataContext.Attach(history);
-            _dataContext.Entry(history).Property("TestAvarage").IsModified = true;
-            _dataContext.Entry(history).Property("ShortQuizAvarage").IsModified = true;
-            _dataContext.Entry(history).Property("HomeworkAvarage").IsModified = true;
-            _dataContext.SaveChanges();
-        }
-
-        public void UpdateMathGrade(Maths math)
-        {
-            _dataContext.Attach(math);
-            _dataContext.Entry(math).Property("TestAvarage").IsModified = true;
-            _dataContext.Entry(math).Property("ShortQuizAvarage").IsModified = true;
-            _dataContext.Entry(math).Property("HomeworkAvarage").IsModified = true;
             _dataContext.SaveChanges();
         }
     }

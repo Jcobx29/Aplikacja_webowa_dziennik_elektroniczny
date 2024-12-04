@@ -25,6 +25,11 @@
                 <span asp-validation-for="TestAvarage" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <label asp-for="SubjectId"  style="display:none" class="control-label"></label>
+                <input asp-for="SubjectId"  type="hidden" value="2" class="form-control" />
+                <span asp-validation-for="SubjectId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
                 <label asp-for="ShortQuizAvarage" class="control-label"></label>
                 <input asp-for="ShortQuizAvarage" class="form-control" />
                 <span asp-validation-for="ShortQuizAvarage" class="text-danger"></span>
