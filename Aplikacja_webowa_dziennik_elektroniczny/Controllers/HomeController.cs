@@ -13,7 +13,7 @@ namespace Aplikacja_webowa_dziennik_elektroniczny.Controllers
             _logger = logger;
             
         }
-        
+        [HttpGet]
         public IActionResult Index()
         {
             return View();

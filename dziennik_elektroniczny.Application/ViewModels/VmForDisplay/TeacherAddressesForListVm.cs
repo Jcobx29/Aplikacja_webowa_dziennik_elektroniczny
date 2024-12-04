@@ -4,7 +4,7 @@ using dziennik_elektroniczny.Domain.Model.TeacherInfo;
 
 namespace dziennik_elektroniczny.Application.ViewModels.VmForDisplay;
 
-public class TeacherAdressesForListVm : IMapFrom<Teacher>
+public class TeacherAddressesForListVm : IMapFrom<Teacher>
 {
     public int Id { get; set; }
     public string LastName { get; set; }
@@ -15,7 +15,7 @@ public class TeacherAdressesForListVm : IMapFrom<Teacher>
     
     public void Mapping(Profile profile)
     {
-        profile.CreateMap<Teacher, TeacherAdressesForListVm>()
+        profile.CreateMap<Teacher, TeacherAddressesForListVm>()
             .ForMember(d => d.Id, opt => opt.MapFrom(s => s.Id))
             .ForMember(d => d.LastName, opt => opt.MapFrom(s => s.LastName))
             .ForMember(d => d.City, opt => opt.MapFrom(s => s.TeacherAddress.City))

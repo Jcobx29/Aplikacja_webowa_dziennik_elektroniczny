@@ -11,6 +11,8 @@ public class TeacherForListVm : IMapFrom<Teacher>
     public string LastName { get; set; }
     public string Category { get; set; }
     public string YearsOfTeaching { get; set; }
+    public string PhoneNumber { get; set; }
+    public string Email { get; set; }
     
     public void Mapping(Profile profile)
     {
@@ -19,6 +21,8 @@ public class TeacherForListVm : IMapFrom<Teacher>
             .ForMember(d => d.FirstName, opt => opt.MapFrom(s => s.FirstName))
             .ForMember(d => d.LastName, opt => opt.MapFrom(s => s.LastName))
             .ForMember(d => d.Category, opt => opt.MapFrom(s => s.Category))
-            .ForMember(d => d.YearsOfTeaching, opt => opt.MapFrom(s => s.YearsOfTeaching));
+            .ForMember(d => d.YearsOfTeaching, opt => opt.MapFrom(s => s.YearsOfTeaching))
+            .ForMember(d => d.PhoneNumber, opt => opt.MapFrom(s => s.TeacherContactInfo.PhoneNumber))
+            .ForMember(d => d.Email, opt => opt.MapFrom(s => s.TeacherContactInfo.Email));
     }
 }

@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using dziennik_elektroniczny.Domain.Model.TeacherInfo;
 using Microsoft.EntityFrameworkCore;
 
 namespace dziennik_elektroniczny.Infrastructure.Repositories
@@ -41,6 +42,10 @@ namespace dziennik_elektroniczny.Infrastructure.Repositories
             _dataContext.Entry(grade).Property("ShortQuizAvarage").IsModified = true;
             _dataContext.Entry(grade).Property("HomeworkAvarage").IsModified = true;
             _dataContext.SaveChanges();
+        }
+        public IQueryable<Teacher> GetAllTeachersInfo()
+        {
+            return _dataContext.Teachers;
         }
     }
 }

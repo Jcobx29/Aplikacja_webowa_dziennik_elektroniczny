@@ -138,5 +138,33 @@ namespace dziennik_elektroniczny.Application.Services
             var singleGrade = _mapper.Map<Grades>(model);
             _studentsRepository.UpdateSingleGrade(singleGrade);
         }
+        public ListTeachersForListVm GetAllTeachersForList(int pageSize, int pageNo)
+        {
+            var teachersInfo = _studentsRepository.GetAllTeachersInfo()
+                .ProjectTo<TeacherForListVm>(_mapper.ConfigurationProvider).ToList();
+            var teachersInfoToShow = teachersInfo.Skip(pageSize * (pageNo - 1)).Take(pageSize).ToList();
+            var teachersList = new ListTeachersForListVm()
+            {
+                PageSize = pageSize,
+                CurrentPage = pageNo,
+                Teachers = teachersInfoToShow,
+                Count = teachersInfo.Count
+            };
+            return teachersList;
+        }
+        public ListTeacherAddressesForListVm GetAllTeachersAddressesForList(int pageSize, int pageNo)
+        {
+            var teachersAddressesInfo = _studentsRepository.GetAllTeachersInfo()
+                .ProjectTo<TeacherAddressesForListVm>(_mapper.ConfigurationProvider).ToList();
+            var teachersAddressesToShow = teachersAddressesInfo.Skip(pageSize * (pageNo - 1)).Take(pageSize).ToList();
+            var teachersAddressesList = new ListTeacherAddressesForListVm()
+            {
+                PageSize = pageSize,
+                CurrentPage = pageNo,
+                TeacherAddresses = teachersAddressesToShow,
+                Count = teachersAddressesInfo.Count
+            };
+            return teachersAddressesList;
+        }
     }
 }

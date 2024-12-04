@@ -16,5 +16,7 @@ namespace dziennik_elektroniczny.Application.Interfaces
         ListGradesForListVm GetAllGradesForList(int pageSize, int pageNo, string classId, int subjectId);
         EditGradesVm GetSingleGradeForEdit(int studentId, int subjectId);
         void UpdateSingleGrade(EditGradesVm model);
+        public ListTeachersForListVm GetAllTeachersForList(int pageSize, int pageNo);
+        public ListTeacherAddressesForListVm GetAllTeachersAddressesForList(int pageSize, int pageNo);
     }
 }
