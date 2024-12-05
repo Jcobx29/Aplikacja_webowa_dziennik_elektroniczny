@@ -13,6 +13,10 @@ namespace dziennik_elektroniczny.Infrastructure
 {
     public class DataContext : IdentityDbContext
     {
+        public DataContext(DbContextOptions<DataContext> options) : base(options)
+        {
+        }
+
         public DbSet<Student> Students { get; set; }
         public DbSet<Grades> Grades { get; set; }
         public DbSet<Subject> Subjects { get; set; }
@@ -21,9 +25,7 @@ namespace dziennik_elektroniczny.Infrastructure
         public DbSet<TeacherAddress> TeacherAddresses { get; set; }
         public DbSet<TeacherContactInfo> TeacherContactInfos { get; set; }     
 
-        public DataContext(DbContextOptions options) : base(options)
-        {
-        }
+        
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
