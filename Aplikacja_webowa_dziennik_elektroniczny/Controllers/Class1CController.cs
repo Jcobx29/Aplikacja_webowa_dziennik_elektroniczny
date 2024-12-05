@@ -1,10 +1,12 @@
 ﻿using dziennik_elektroniczny.Application.Interfaces;
 using dziennik_elektroniczny.Application.Services;
 using dziennik_elektroniczny.Application.ViewModels.VmForEdit;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Aplikacja_webowa_dziennik_elektroniczny.Controllers
 {
+    [Authorize(Roles = "Student1C, BiologyTeacher, ChemistryTeacher, EnglishTeacher, GeographyTeacher, GermanTeacher, HistoryTeacher, MathTeacher, HeadTeacher")]
     public class Class1CController : Controller
     {
         private readonly IStudentsService _studentsService;
@@ -172,13 +174,14 @@ namespace Aplikacja_webowa_dziennik_elektroniczny.Controllers
             var model = _studentsService.GetAllGradesForList(pageSize, pageNo.Value, "1C", 7);
             return View(model);
         }
-
-                [HttpGet]
+        [Authorize(Roles = "BiologyTeacher, HeadTeacher")]
+        [HttpGet]
         public IActionResult EditBiologyGrade(int studentId)
         {
             var biologyGrade = _studentsService.GetSingleGradeForEdit(studentId, 1);
             return View(biologyGrade);
         }
+        [Authorize(Roles = "BiologyTeacher, HeadTeacher")]
         [HttpPost]
         public IActionResult EditBiologyGrade(EditGradesVm model)
         {
@@ -189,13 +192,14 @@ namespace Aplikacja_webowa_dziennik_elektroniczny.Controllers
             }
             return View(model);
         }
-
+        [Authorize(Roles = "ChemistryTeacher, HeadTeacher")]
         [HttpGet]
         public IActionResult EditChemistryGrade(int studentId)
         {
             var chemistryGrade = _studentsService.GetSingleGradeForEdit(studentId, 2);
             return View(chemistryGrade);
         }
+        [Authorize(Roles = "ChemistryTeacher, HeadTeacher")]
         [HttpPost]
         public IActionResult EditChemistryGrade(EditGradesVm model)
         {
@@ -206,13 +210,14 @@ namespace Aplikacja_webowa_dziennik_elektroniczny.Controllers
             }
             return View(model);
         }
-
+        [Authorize(Roles = "EnglishTeacher, HeadTeacher")]
         [HttpGet]
         public IActionResult EditEnglishGrade(int studentId)
         {
             var englishGrade = _studentsService.GetSingleGradeForEdit(studentId, 3);
             return View(englishGrade);
         }
+        [Authorize(Roles = "EnglishTeacher, HeadTeacher")]
         [HttpPost]
         public IActionResult EditEnglishGrade(EditGradesVm model)
         {
@@ -223,13 +228,14 @@ namespace Aplikacja_webowa_dziennik_elektroniczny.Controllers
             }
             return View(model);
         }
-
+        [Authorize(Roles = "GeographyTeacher, HeadTeacher")]
         [HttpGet]
         public IActionResult EditGeographyGrade(int studentId)
         {
             var geographyGrade = _studentsService.GetSingleGradeForEdit(studentId, 4);
             return View(geographyGrade);
         }
+        [Authorize(Roles = "GeographyTeacher, HeadTeacher")]
         [HttpPost]
         public IActionResult EditGeographyGrade(EditGradesVm model)
         {
@@ -240,13 +246,14 @@ namespace Aplikacja_webowa_dziennik_elektroniczny.Controllers
             }
             return View(model);
         }
-
+        [Authorize(Roles = "GermanTeacher, HeadTeacher")]
         [HttpGet]
         public IActionResult EditGermanGrade(int studentId)
         {
             var germanGrade = _studentsService.GetSingleGradeForEdit(studentId, 5);
             return View(germanGrade);
         }
+        [Authorize(Roles = "GermanTeacher, HeadTeacher")]
         [HttpPost]
         public IActionResult EditGermanGrade(EditGradesVm model)
         {
@@ -257,13 +264,14 @@ namespace Aplikacja_webowa_dziennik_elektroniczny.Controllers
             }
             return View(model);
         }
-
+        [Authorize(Roles = "HistoryTeacher, HeadTeacher")]
         [HttpGet]
         public IActionResult EditHistoryGrade(int studentId)
         {
             var historyGrade = _studentsService.GetSingleGradeForEdit(studentId, 6);
             return View(historyGrade);
         }
+        [Authorize(Roles = "HistoryTeacher, HeadTeacher")]
         [HttpPost]
         public IActionResult EditHistoryGrade(EditGradesVm model)
         {
@@ -274,13 +282,14 @@ namespace Aplikacja_webowa_dziennik_elektroniczny.Controllers
             }
             return View(model);
         }
-
+        [Authorize(Roles = "MathTeacher, HeadTeacher")]
         [HttpGet]
         public IActionResult EditMathGrade(int studentId)
         {
             var mathGrade = _studentsService.GetSingleGradeForEdit(studentId, 7);
             return View(mathGrade);
         }
+        [Authorize(Roles = "MathTeacher, HeadTeacher")]
         [HttpPost]
         public IActionResult EditMathGrade(EditGradesVm model)
         {

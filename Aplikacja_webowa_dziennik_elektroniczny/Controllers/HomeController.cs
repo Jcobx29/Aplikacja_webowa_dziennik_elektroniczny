@@ -39,10 +39,6 @@ namespace Aplikacja_webowa_dziennik_elektroniczny.Controllers
             return View();
         }
         [HttpGet]
-        public IActionResult Class4Split()
-        {
-            return View();
-        }
         public IActionResult Privacy()
         {
             return View();

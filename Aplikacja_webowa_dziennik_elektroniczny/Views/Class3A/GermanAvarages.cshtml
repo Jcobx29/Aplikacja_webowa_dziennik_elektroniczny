@@ -10,9 +10,12 @@
     <div>
         <a class="nav-link text-dark" asp-area="" asp-controller="Class3A" asp-action="StudentsAvarages">Back to previous page</a>
     </div>
+    @if (User.IsInRole("GermanTeacher") || User.IsInRole("HeadTeacher"))
+    {
     <div class="next">
         <a class="nav-link text-dark" asp-area="" asp-controller="Class3A" asp-action="EditGermanGrade">Edit grade</a>
-    </div>
+    </div>   
+    }
 </div>
 <style>
     table {
