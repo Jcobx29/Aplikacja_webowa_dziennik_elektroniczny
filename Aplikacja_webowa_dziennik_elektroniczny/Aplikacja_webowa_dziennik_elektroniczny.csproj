@@ -5,6 +5,7 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>aspnet-Aplikacja_webowa_dziennik_elektroniczny-20b5192e-0649-47eb-bdcf-f4e2cf3c1a24</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
   </PropertyGroup>
 
   <ItemGroup>
@@ -26,6 +27,12 @@
   <ItemGroup>
     <ProjectReference Include="..\dziennik_elektroniczny.Application\dziennik_elektroniczny.Application.csproj" />
     <ProjectReference Include="..\dziennik_elektroniczny.Infrastructure\dziennik_elektroniczny.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="..\.dockerignore">
+      <Link>.dockerignore</Link>
+    </Content>
   </ItemGroup>
 
 </Project>
