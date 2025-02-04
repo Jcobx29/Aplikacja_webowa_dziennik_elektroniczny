@@ -19,6 +19,13 @@ builder.Services.AddApplication();
 builder.Services.AddInfrastructure();
 builder.Services.AddControllersWithViews();
 
+builder.Services.AddAuthentication().AddGoogle(options =>
+{
+IConfigurationSection googleAuthNSection = builder.Configuration.GetSection("Authentication:Google");
+options.ClientId = googleAuthNSection["ClientId"];
+options.ClientSecret = googleAuthNSection["ClientSecret"];
+});
+
 var app = builder.Build();
 
 
